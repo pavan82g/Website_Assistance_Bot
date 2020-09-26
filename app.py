@@ -89,9 +89,9 @@ def similarity(X,Y):
     return cosine
 
 def load_data():
-    file_data = open(r".data/greet.txt").read()
+    file_data = open(r"./data/greet.txt").read()
     common_actions['greet'] = get_data(file_data)
-    file_data = open(r".data/action1.txt").read()
+    file_data = open(r"./data/action1.txt").read()
     common_actions['click'] = get_data(file_data)
 
 

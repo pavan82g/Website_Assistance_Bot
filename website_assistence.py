@@ -52,9 +52,14 @@ def run():
         user_message = input()
         bot_message = ""
 
+        user_message = checkSpellings(user_message)
+
         split_data = split_action_text(user_message)
-        print(split_data)
+        
         action = getAction(split_data['remaining'])
+
+        if split_data['remaining'].replace(' ','') == "":
+            action = ('click',0.7)
 
         if action[1] < 0.45:
             print("Unable to understand")
@@ -62,11 +67,11 @@ def run():
             print("select 2 for click")
             option = int(input())
             if option == 1:
-                with open(r".data/greet.txt",'a') as file:
+                with open(r"./data/greet.txt",'a') as file:
                     file.write('\n')
                     file.write(str(split_data['remaining']))
             elif option == 2:
-                with open(r".data/action1.txt",'a') as file:
+                with open(r"./data/action1.txt",'a') as file:
                     file.write('\n')
                     file.write(str(split_data['remaining']))
             else:
@@ -119,9 +124,9 @@ def similarity(X,Y):
     return cosine
 
 def load_data():
-    file_data = open(r".data/greet.txt").read()
+    file_data = open(r"./data/greet.txt").read()
     common_actions['greet'] = get_data(file_data)
-    file_data = open(r".data/action1.txt").read()
+    file_data = open(r"./data/action1.txt").read()
     common_actions['click'] = get_data(file_data)
 
 if __name__ == "__main__":
