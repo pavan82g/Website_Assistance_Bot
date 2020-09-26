@@ -1,0 +1,28 @@
+# Website assistance bot
+
+## Requirements
+- python
+- nltk
+- spellchecker
+- flask
+
+Install python and then install other requirements,
+
+` pip install -r requirements.txt`
+
+After sucessfully installing all the requirements then open the python command line and install the nltk models.
+
+In python command line
+
+> import nltk
+
+> nltk.download('all')
+
+> nltk.download('stopwords')
+
+
+# To run the application 
+from the root directory of the project
+`python app.py`
+
+The app starts running at your localhost and port 5000
