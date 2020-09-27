@@ -26,3 +26,7 @@ from the root directory of the project
 `python app.py`
 
 The app starts running at your localhost and port 5000
+
+To access the bot navigate to /bot in the url 
+
+(* this accepts GET request only with one parameter 'user_message')

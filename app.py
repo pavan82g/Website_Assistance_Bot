@@ -3,9 +3,10 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize 
 from difflib import SequenceMatcher 
 from flask import Flask, request
-
+from flask_cors import CORS, cross_origin
 
 app=Flask(__name__)
+cors = CORS(app)
 
 def get_data(file_data):
     data = []
