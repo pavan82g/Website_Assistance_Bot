@@ -16,6 +16,7 @@ def get_current_flows(current_position):
         return inital_flows
     else:
         if current_position in remaining_flows.keys():
+            # print(remaining_flows[current_position])
             return remaining_flows[current_position]
     return None
 
@@ -29,10 +30,11 @@ def split_action_text(main_string,current_position):
         result['remaining'] = main_string
     for id,word in website_words.items():
         position = main_string.lower().find(word.lower())
+        # print(position,main_string,word)
         if position != -1:
             remaining_text = main_string[0:position] + main_string[position+len(word):]
             result['website_word'] = word + "-" + str(id)
-            result['remaining'] = remaining_text
+            result['remaining'] = checkSpellings(remaining_text)
             return result
     result['website_word'] = None
     result['remaining'] = main_string
@@ -65,7 +67,7 @@ def run():
         current_position = input("Enter current_position: ")
         bot_message = ""
 
-        user_message = checkSpellings(user_message)
+        # user_message = checkSpellings(user_message)
 
         split_data = split_action_text(user_message,current_position)
         

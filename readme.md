@@ -29,4 +29,5 @@ The app starts running at your localhost and port 5000
 
 To access the bot navigate to /bot in the url 
 
-(* this accepts GET request only with one parameter 'user_message')
+** this accepts GET request only with parameters 'user_message', 'current_position' 
+current_position is the position at which user is and if the current_position is empty then by default it will take as home i.e 0
