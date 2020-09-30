@@ -4,6 +4,7 @@ from nltk.tokenize import word_tokenize
 from difflib import SequenceMatcher 
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
+import json
 
 app=Flask(__name__)
 cors = CORS(app)
@@ -15,18 +16,31 @@ def get_data(file_data):
         data.append(line)
     return data 
 
-def split_action_text(main_string):
+def get_current_flows(current_position):
+    if current_position == "0" or current_position == "":
+        return inital_flows
+    else:
+        if current_position in remaining_flows.keys():
+            return remaining_flows[current_position]
+    return None
+
+def split_action_text(main_string,current_position):
     result = {"website_word":"","remaining":""}
     position = None
     # TODO: logic for if there are more than one website word in the main string
-    for word in website_words:
-        position = main_string.find(word)
+    website_words = get_current_flows(current_position)
+    if website_words is None:
+        result['website_word'] = None
+        result['remaining'] = main_string
+        return result
+    for id,word in website_words.items():
+        position = main_string.lower().find(word.lower())
         if position != -1:
             remaining_text = main_string[0:position] + main_string[position+len(word):]
-            result['website_word'] = word
+            result['website_word'] = str(id)
             result['remaining'] = remaining_text
             return result
-
+    result['website_word'] = None
     result['remaining'] = main_string
     return result
 
@@ -89,32 +103,40 @@ def similarity(X,Y):
     # print("similarity: ", cosine) 
     return cosine
 
-def load_data():
+def load_action():
     file_data = open(r"./data/greet.txt").read()
     common_actions['greet'] = get_data(file_data)
     file_data = open(r"./data/action1.txt").read()
     common_actions['click'] = get_data(file_data)
 
+def get_json():
+    file_name = "./data/flow.json"
+    f = open(file_name,) 
+    data = json.load(f) 
+    return data
 
 @app.route('/bot',methods=['GET'])
 def home():
     if request.method=='GET':
         user_message = request.args.get('user_message')
+        current_position = request.args.get('current_position')
         # user_message = "hello there"
-
         bot_message = ""
 
-        split_data = split_action_text(user_message)
+        split_data = split_action_text(user_message,current_position)
         
         action = getAction(split_data['remaining'])
 
-        if action[1] < 0.45:
+        if split_data['remaining'].replace(' ','') == "":
+            action = ('click',0.7)
+
+        if action[1] < 0.45 or split_data['website_word'] is None:
+            flows = get_current_flows(current_position)
             data = {
                 "action":"Unable to understand",
-                "action_name":list(website_words.keys())
+                "action_name":list(flows.keys())
             }
             return data
-
         data = {
                 "action":str(action[0]),
                 "action_name":str(split_data['website_word'])
@@ -124,10 +146,14 @@ def home():
         
 
 if __name__ == '__main__':
-    # change the below words as required
-    website_words = {"home":"0","help":"1","about":"2","settings":"3"}
+    # # change the below words as required
+    # website_words = {"home":"0","help":"1","about":"2","settings":"3"}
+    flow = get_json()
+    inital_flows = flow['INITAL']
+    common_flows = flow['SAME']
+    remaining_flows = flow['TOTAL']
     # actions the bot can perform (understand the given english)
     # to add another action a text file should be created
     common_actions = {"greet":[],"click":[]}
-    load_data()
+    load_action()
     app.run(port=5000,debug=True)

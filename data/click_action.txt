@@ -2,5 +2,5 @@ take me to
 go to
 click
 open
-move to 
-select 
+move to
+select

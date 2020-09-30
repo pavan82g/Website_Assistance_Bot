@@ -2,6 +2,7 @@ from spellchecker import SpellChecker
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
 from difflib import SequenceMatcher 
+import json
 
 def get_data(file_data):
     data = []
@@ -10,18 +11,31 @@ def get_data(file_data):
         data.append(line)
     return data 
 
-def split_action_text(main_string):
+def get_current_flows(current_position):
+    if current_position == "0" or current_position == "":
+        return inital_flows
+    else:
+        if current_position in remaining_flows.keys():
+            return remaining_flows[current_position]
+    return None
+
+def split_action_text(main_string,current_position):
     result = {"website_word":"","remaining":""}
     position = None
     # TODO: logic for if there are more than one website word in the main string
-    for word in website_words:
-        position = main_string.find(word)
+    website_words = get_current_flows(current_position)
+    print(website_words)
+    if website_words is None:
+        result['website_word'] = None
+        result['remaining'] = main_string
+    for id,word in website_words.items():
+        position = main_string.lower().find(word.lower())
         if position != -1:
             remaining_text = main_string[0:position] + main_string[position+len(word):]
-            result['website_word'] = word
+            result['website_word'] = word + "-" + str(id)
             result['remaining'] = remaining_text
             return result
-
+    result['website_word'] = None
     result['remaining'] = main_string
     return result
 
@@ -49,12 +63,13 @@ def getAction(message):
 
 def run():
     while True:
-        user_message = input()
+        user_message = input("Enter user_message: ")
+        current_position = input("Enter current_position: ")
         bot_message = ""
 
         user_message = checkSpellings(user_message)
 
-        split_data = split_action_text(user_message)
+        split_data = split_action_text(user_message,current_position)
         
         action = getAction(split_data['remaining'])
 
@@ -76,13 +91,14 @@ def run():
                     file.write(str(split_data['remaining']))
             else:
                 print("Invalid option")
-            load_data()
+            load_actions()
             continue
 
-        if split_data['website_word'] != "" :
+        if split_data['website_word'] is not None :
             bot_message += str(action[0]) +" "+ str(split_data['website_word'])
         else:
-            bot_message += str(action[0])
+            flows = get_current_flows(current_position)
+            bot_message += str(action[0]) + " "+ str(list(flows.items()))
         
         print(bot_message)
 
@@ -123,17 +139,31 @@ def similarity(X,Y):
     # print("similarity: ", cosine) 
     return cosine
 
-def load_data():
+def load_actions():
     file_data = open(r"./data/greet.txt").read()
     common_actions['greet'] = get_data(file_data)
     file_data = open(r"./data/action1.txt").read()
     common_actions['click'] = get_data(file_data)
 
+def get_json():
+    file_name = "./data/flow.json"
+    f = open(file_name,) 
+    data = json.load(f) 
+    return data
+
+
 if __name__ == "__main__":
-    # chnage the below words as required
-    website_words = {"home":"0","help":"1","about":"2","settings":"3"}
+    # # change the below words as required
+    # website_words = {"home":"0","help":"1","about":"2","settings":"3"}
+    flow = get_json()
+    inital_flows = flow['INITAL']
+    common_flows = flow['SAME']
+    remaining_flows = flow['TOTAL']
+    # print(inital_flows)
+    # print(common_flows)
+    # print(remaining_flows)
     # actions the bot can perform (understand the given english)
     # to add another action a text file should be created
     common_actions = {"greet":[],"click":[]}
-    load_data()
+    load_actions()
     run()
