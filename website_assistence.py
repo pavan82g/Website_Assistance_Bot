@@ -24,7 +24,6 @@ def split_action_text(main_string,current_position):
     position = None
     # TODO: logic for if there are more than one website word in the main string
     website_words = get_current_flows(current_position)
-    print(website_words)
     if website_words is None:
         result['website_word'] = None
         result['remaining'] = main_string
@@ -57,7 +56,6 @@ def getAction(message):
             local_accuracy.append(similarity(message,line))
         accuracy[k] = max(local_accuracy)
     accuracy = sorted(accuracy.items(), key=lambda x: x[1], reverse=True)
-    print(accuracy)
     action = accuracy[0]
     return action
 

@@ -5,6 +5,7 @@ from difflib import SequenceMatcher
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
 import json
+import re
 
 app=Flask(__name__)
 cors = CORS(app)
@@ -62,7 +63,6 @@ def getAction(message):
             local_accuracy.append(similarity(message,line))
         accuracy[k] = max(local_accuracy)
     accuracy = sorted(accuracy.items(), key=lambda x: x[1], reverse=True)
-    # print(accuracy)
     action = accuracy[0]
     return action
 
@@ -124,6 +124,8 @@ def home():
         bot_message = ""
 
         split_data = split_action_text(user_message,current_position)
+        
+        split_data['remaining'] = re.sub(r'[^\w]', '', split_data['remaining'])
         
         action = getAction(split_data['remaining'])
 
