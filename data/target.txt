@@ -1,5 +1,0 @@
-settings
-settings page
-home
-home page
-about 

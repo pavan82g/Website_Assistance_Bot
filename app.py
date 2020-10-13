@@ -146,6 +146,26 @@ def home():
         
         return data
         
+@app.route('/suggestion',methods=['GET'])
+def get_suggestion():
+    if request.method=='GET':
+        user_message = request.args.get('user_message')
+        user_message = checkSpellings(user_message)
+        data = {
+            "suggestion":user_message
+        }
+        return data
+
+@app.route('/get_faq',methods=['GET'])
+def get_faq():
+    if request.method=='GET':
+        file_name = "./data/faq.json"
+        f = open(file_name,) 
+        data = json.load(f) 
+        data = {
+            "FAQ":data
+        }
+        return data
 
 if __name__ == '__main__':
     # # change the below words as required

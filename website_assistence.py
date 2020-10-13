@@ -4,6 +4,10 @@ from nltk.tokenize import word_tokenize
 from difflib import SequenceMatcher 
 import json
 
+def get_suggestion(user_message):
+    user_message = checkSpellings(user_message)
+    return user_message
+
 def get_data(file_data):
     data = []
     # file_data = open(path).read()
@@ -42,6 +46,7 @@ def split_action_text(main_string,current_position):
 
 def checkSpellings(text):
     spell = SpellChecker() 
+    spell.word_frequency.load_text_file('./data/words.txt')
     new_text = ""
 
     for word in text.split():
@@ -67,7 +72,7 @@ def run():
         current_position = input("Enter current_position: ")
         bot_message = ""
 
-        # user_message = checkSpellings(user_message)
+        user_message = checkSpellings(user_message)
 
         split_data = split_action_text(user_message,current_position)
         
@@ -151,6 +156,11 @@ def get_json():
     data = json.load(f) 
     return data
 
+def get_faq():
+    file_name = "./data/faq.json"
+    f = open(file_name,) 
+    data = json.load(f) 
+    return data
 
 if __name__ == "__main__":
     # # change the below words as required
@@ -166,4 +176,6 @@ if __name__ == "__main__":
     # to add another action a text file should be created
     common_actions = {"greet":[],"click":[]}
     load_actions()
-    run()
+    # run()
+    # print(get_suggestion("take me to icount"))
+    # print(get_faq())
