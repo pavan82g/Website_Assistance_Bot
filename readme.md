@@ -31,6 +31,7 @@ To access the bot navigate to /bot in the url
 
 ** this accepts GET request only with parameters 'user_message', 'current_position' 
 current_position is the position at which user is and if the current_position is empty then by default it will take as home i.e 0
+** for more faq add faq in faq.json file
 
 API and there arrguments
 api: /bot  arrguments:user_message,current_position
