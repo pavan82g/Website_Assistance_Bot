@@ -115,6 +115,20 @@ def get_json():
     data = json.load(f) 
     return data
 
+
+def getSimilar(flows,word):
+    similar_words = []
+    for k,v in flows.iitems():
+        score = similarity(v,word)
+        # print(l,word,score)
+        if score > 0.25:
+            similar_words.append(k)
+
+    if len(similar_words) < 1:
+        similar_words = list(flows.keys())
+    return similar_words
+
+
 @app.route('/bot',methods=['GET'])
 def home():
     if request.method=='GET':
@@ -134,9 +148,10 @@ def home():
 
         if action[1] < 0.45 or split_data['website_word'] is None:
             flows = get_current_flows(current_position)
+            suggestion = getSimilar(flows,user_message)
             data = {
                 "action":"Unable to understand",
-                "action_name":list(flows.keys())
+                "action_name":suggestion
             }
             return data
         data = {
@@ -178,4 +193,4 @@ if __name__ == '__main__':
     # to add another action a text file should be created
     common_actions = {"greet":[],"click":[]}
     load_action()
-    app.run(port=5000,debug=True)
+    app.run(port=8000,debug=True)

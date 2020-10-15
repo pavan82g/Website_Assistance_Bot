@@ -66,46 +66,18 @@ def getAction(message):
     action = accuracy[0]
     return action
 
-def run():
-    while True:
-        user_message = input("Enter user_message: ")
-        current_position = input("Enter current_position: ")
-        bot_message = ""
+def getSimilar(flows,word):
+    similar_words = []
+    for k,v in flows.iitems():
+        score = similarity(v,word)
+        # print(l,word,score)
+        if score > 0.25:
+            similar_words.append(k)
 
-        user_message = checkSpellings(user_message)
+    if len(similar_words) < 1:
+        similar_words = list(flows.keys())
+    return similar_words
 
-        split_data = split_action_text(user_message,current_position)
-        
-        action = getAction(split_data['remaining'])
-
-        if split_data['remaining'].replace(' ','') == "":
-            action = ('click',0.7)
-
-        if action[1] < 0.45:
-            print("Unable to understand")
-            print("select 1 for greet")
-            print("select 2 for click")
-            option = int(input())
-            if option == 1:
-                with open(r"./data/greet.txt",'a') as file:
-                    file.write('\n')
-                    file.write(str(split_data['remaining']))
-            elif option == 2:
-                with open(r"./data/action1.txt",'a') as file:
-                    file.write('\n')
-                    file.write(str(split_data['remaining']))
-            else:
-                print("Invalid option")
-            load_actions()
-            continue
-
-        if split_data['website_word'] is not None :
-            bot_message += str(action[0]) +" "+ str(split_data['website_word'])
-        else:
-            flows = get_current_flows(current_position)
-            bot_message += str(action[0]) + " "+ str(list(flows.items()))
-        
-        print(bot_message)
 
 # def similarity(str1,str2):
 #     return SequenceMatcher(None, str1, str2).ratio() 
@@ -113,6 +85,9 @@ def similarity(X,Y):
     # Program to measure the similarity between  
     # two sentences using cosine similarity. 
     
+    X = X.lower()
+    Y = Y.lower()
+
     # tokenization 
     X_list = word_tokenize(X)  
     Y_list = word_tokenize(Y) 
@@ -162,6 +137,62 @@ def get_faq():
     data = json.load(f) 
     return data
 
+def run():
+    while True:
+        user_message = input("Enter user_message: ")
+        current_position = input("Enter current_position: ")
+        bot_message = ""
+
+        user_message = checkSpellings(user_message)
+
+        split_data = split_action_text(user_message,current_position)
+        
+        action = getAction(split_data['remaining'])
+
+        if split_data['remaining'].replace(' ','') == "":
+            action = ('click',0.7)
+
+        # if action[1] < 0.45:
+        #     print("Unable to understand")
+        #     print("select 1 for greet")
+        #     print("select 2 for click")
+        #     option = int(input())
+        #     if option == 1:
+        #         with open(r"./data/greet.txt",'a') as file:
+        #             file.write('\n')
+        #             file.write(str(split_data['remaining']))
+        #     elif option == 2:
+        #         with open(r"./data/action1.txt",'a') as file:
+        #             file.write('\n')
+        #             file.write(str(split_data['remaining']))
+        #     else:
+        #         print("Invalid option")
+        #     load_actions()
+        #     continue
+
+        if action[1] < 0.45 or split_data['website_word'] is None:
+            flows = get_current_flows(current_position)
+            suggestion = getSimilar(flows,user_message)
+            data = {
+                "action":"Unable to understand",
+                "action_name":suggestion
+            }
+            print(data)
+            continue
+        data = {
+                "action":str(action[0]),
+                "action_name":str(split_data['website_word'])
+            }
+        print(data)
+
+        # if split_data['website_word'] is not None :
+        #     bot_message += str(action[0]) +" "+ str(split_data['website_word'])
+        # else:
+        #     flows = get_current_flows(current_position)
+        #     bot_message += str(action[0]) + " "+ str(list(flows.items()))
+        
+        # print(bot_message)
+
 if __name__ == "__main__":
     # # change the below words as required
     # website_words = {"home":"0","help":"1","about":"2","settings":"3"}
@@ -176,6 +207,7 @@ if __name__ == "__main__":
     # to add another action a text file should be created
     common_actions = {"greet":[],"click":[]}
     load_actions()
-    # run()
+    run()
     # print(get_suggestion("take me to icount"))
     # print(get_faq())
+    # print(similarity("slow","flow"))
