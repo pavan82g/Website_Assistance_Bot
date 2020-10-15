@@ -118,7 +118,7 @@ def get_json():
 
 def getSimilar(flows,word):
     similar_words = []
-    for k,v in flows.iitems():
+    for k,v in flows.items():
         score = similarity(v,word)
         # print(l,word,score)
         if score > 0.25:
