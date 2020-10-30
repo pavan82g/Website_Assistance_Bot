@@ -189,8 +189,8 @@ def upload():
         file = request.files['document']
         if file:
             filename = secure_filename(file.filename)
-            file.save("./uploads/", filename)
-            print(os.path.join("./uploads/", filename))
+            file.save("./static/database/", filename)
+            print(os.path.join("./static/database/", filename))
             return "Document has been sucessfully uploaded"
         else:
             return "No file recivied"
