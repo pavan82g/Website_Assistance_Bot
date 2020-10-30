@@ -7,7 +7,7 @@ from flask_cors import CORS, cross_origin
 import json
 import re
 from werkzeug.utils import secure_filename
-
+import os
 app=Flask(__name__)
 cors = CORS(app)
 
@@ -189,7 +189,7 @@ def upload():
         file = request.files['document']
         if file:
             filename = secure_filename(file.filename)
-            file.save("./static/database/", filename)
+            file.save(os.path.join("./static/database/", filename))
             print(os.path.join("./static/database/", filename))
             return "Document has been sucessfully uploaded"
         else:
