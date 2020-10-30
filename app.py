@@ -182,6 +182,19 @@ def get_faq():
         }
         return data
 
+@app.route('/upload',methods=['POST'])
+def upload():
+    if request.method=='POST':
+        file = request.files['document']
+        if file:
+            filename = secure_filename(file.filename)
+            file.save("./uploads/", filename))
+            print(os.path.join("./uploads/", filename))
+            return "Document has been sucessfully uploaded"
+        else:
+            return "No file recivied"
+
+
 if __name__ == '__main__':
     # # change the below words as required
     # website_words = {"home":"0","help":"1","about":"2","settings":"3"}
