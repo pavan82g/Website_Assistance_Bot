@@ -37,4 +37,5 @@ API and there arrguments
 api: /bot  arrguments:user_message,current_position
 api: /suggestion  arrguments:user_message
 api: /get_faq  arrguments:None
+api: /upload  arrguments:form data "document"
 
