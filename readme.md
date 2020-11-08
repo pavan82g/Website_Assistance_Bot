@@ -34,8 +34,9 @@ current_position is the position at which user is and if the current_position is
 ** for more faq add faq in faq.json file
 
 API and there arrguments
-api: /bot  arrguments:user_message,current_position
+api: /bot  arrguments:user_message,current_position,language
 api: /suggestion  arrguments:user_message
 api: /get_faq  arrguments:None
 api: /upload  arrguments:form data "document"
+api: /getlanguage  arrguments:None
 

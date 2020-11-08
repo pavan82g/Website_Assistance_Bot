@@ -129,12 +129,21 @@ def getSimilar(flows,word):
         similar_words = list(flows.keys())
     return similar_words
 
+@app.route('/getlanguage',methods=['GET'])
+def getLanguage():
+    if request.method == "GET":
+        file_data = open(r"./data/language.txt").read()
+        languange_list = get_data(file_data)
+        data = {languange_list}
+        return data
+            
 
 @app.route('/bot',methods=['GET'])
 def home():
     if request.method=='GET':
         user_message = request.args.get('user_message')
         current_position = request.args.get('current_position')
+        language = request.args.get('language')
         # user_message = "hello there"
         bot_message = ""
 
