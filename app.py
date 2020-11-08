@@ -129,12 +129,15 @@ def getSimilar(flows,word):
         similar_words = list(flows.keys())
     return similar_words
 
+
 @app.route('/getlanguage',methods=['GET'])
 def getLanguage():
     if request.method == "GET":
         file_data = open(r"./data/language.txt").read()
         languange_list = get_data(file_data)
-        data = {languange_list}
+        data = {}
+        for i,language in enumerate(languange_list):
+            data[i] = language
         return data
             
 
