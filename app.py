@@ -161,12 +161,12 @@ def bot_text():
         return data
 
 
-@app.route('/bot_voice',methods=['GET'])
+@app.route('/bot_voice',methods=['GET','POST'])
 def bot_voice():
-    if request.method=='GET':
-        user_message = request.args.get('user_message')
-        current_position = request.args.get('current_position')
-        language = request.args.get('language')
+    if request.method=='POST':
+        user_message = request.form['user_message']
+        current_position = request.form['current_position']
+        language = request.form['language']
 
         # Convert the voice to text 
         # language is not english convert to english

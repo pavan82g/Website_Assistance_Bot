@@ -35,19 +35,22 @@ current_position is the position at which user is and if the current_position is
 
 API and there arrguments
 
-api: /bot_text  arrguments:user_message,current_position,language
+* api: /bot_text  arrguments:user_message,current_position,language
 
-Eg. `Example http://127.0.0.1:8000/bot_text?user_message="select face entry"&current_position=1&language="English"`
+  * Eg. `Example http://127.0.0.1:8000/bot_text?user_message="select face entry"&current_position=1&language="English"`
 
-api: /bot_voice  arrguments:user_message,current_position,language
+  * 'language' should be the id you get in the get request of 'getlanguage'
 
-* user_message in this api will be the voice data
+* api: /bot_voice  arrguments:user_message,current_position,language
 
-api: /suggestion  arrguments:user_message
+  * 'user_message' in this api will be the voice data
+  * It will be POST request and requires form data
 
-api: /get_faq  arrguments:None
+* api: /suggestion  arrguments:user_message
 
-api: /upload  arrguments:form data "document"
+* api: /get_faq  arrguments:None
 
-api: /getlanguage  arrguments:None
+* api: /upload  arrguments:form data "document"
+
+* api: /getlanguage  arrguments:None
 
