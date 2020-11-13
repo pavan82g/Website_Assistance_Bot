@@ -16,6 +16,8 @@ def similarity(X,Y):
     # Program to measure the similarity between  
     # two sentences using cosine similarity. 
     
+    X = X.lower()
+    Y = Y.lower()
     # tokenization 
     X_list = word_tokenize(X)  
     Y_list = word_tokenize(Y) 

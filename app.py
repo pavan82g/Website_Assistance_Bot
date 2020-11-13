@@ -9,6 +9,7 @@ import re
 from werkzeug.utils import secure_filename
 import os
 import speech_recognition as sr
+from googletrans import Translator
 
 from Utilites import get_text_data,similarity,checkSpellings
 
@@ -48,17 +49,17 @@ def split_action_text(main_string,current_position):
 def getAction(message):
     accuracy = {}
     for k,v in common_actions.items():
-        print("k,v",k,v)
+        # print("k,v",k,v)
         local_accuracy = []
         for line in v:
-            print("message",message)
-            print("line",line)
-            print("similarity",similarity("take me to ",line))
+            # print("message",message)
+            # print("line",line)
+            # print("similarity",similarity("take me to ",line))
             local_accuracy.append(similarity(message,line))
-        print("local accuracy",local_accuracy)
+        # print("local accuracy",local_accuracy)
         accuracy[k] = max(local_accuracy)
     accuracy = sorted(accuracy.items(), key=lambda x: x[1], reverse=True)
-    print("final dictonary",accuracy)
+    # print("final dictonary",accuracy)
     action = accuracy[0]
     return action
 
@@ -109,8 +110,10 @@ def bot_text():
         # user_message = "hello there"
 
         # Convert any language to english and then process
-
-        print(user_message)
+        translator = Translator()
+        translation = translator.translate(user_message)
+        user_message = translation.text
+        print(user_message,language)
 
         split_data = split_action_text(user_message,current_position)
         print("split data",split_data)
@@ -120,6 +123,13 @@ def bot_text():
         
         if split_data['remaining'].replace(' ','') == "":
             action = ('click',0.7)
+            # If got some website word but no action word
+            if split_data['website_word'] is not None:
+                data = {
+                    "action":str(action[0]),
+                    "action_name":str(split_data['website_word'])
+                }
+                return data
         else:
             action = getAction(split_data['remaining'])
             print(action)
