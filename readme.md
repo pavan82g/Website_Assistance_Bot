@@ -34,9 +34,20 @@ current_position is the position at which user is and if the current_position is
 ** for more faq add faq in faq.json file
 
 API and there arrguments
-api: /bot  arrguments:user_message,current_position,language
+
+api: /bot_text  arrguments:user_message,current_position,language
+
+Eg. `Example http://127.0.0.1:8000/bot_text?user_message="select face entry"&current_position=1&language="English"`
+
+api: /bot_voice  arrguments:user_message,current_position,language
+
+* user_message in this api will be the voice data
+
 api: /suggestion  arrguments:user_message
+
 api: /get_faq  arrguments:None
+
 api: /upload  arrguments:form data "document"
+
 api: /getlanguage  arrguments:None
 
