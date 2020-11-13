@@ -164,23 +164,29 @@ def bot_text():
 @app.route('/bot_voice',methods=['GET','POST'])
 def bot_voice():
     if request.method=='POST':
-        user_message = request.form['user_message']
+        user_message = request.files['user_message']
         current_position = request.form['current_position']
         language = request.form['language']
 
+        # Saving the voice file 
+        user_message.save('./static/voice/audio.wav')
         # Convert the voice to text 
         # language is not english convert to english
         file_path = r"./static/data/language.json"
         f = open(file_path,) 
         language_data = json.load(f) 
 
+        print("voice data",user_message)
         r = sr.Recognizer()
         try:
             # using google speech recognition
-            text = r.recognize_google(user_message, language = language_data[language]['code'])
+            with sr.AudioFile(r'./static/voice/audio.wav') as source:
+                audio_text = r.listen(source)
+    
+            user_message = r.recognize_google(audio_text, language = language_data[language]['code'])
             print('Converting audio transcripts into text ...')
-            print(text)
-            return text
+            print(user_message)
+            # return text
         
         except:
             print('Sorry.. run again...')
