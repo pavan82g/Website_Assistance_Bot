@@ -219,11 +219,14 @@ def bot_voice():
         if action[1] < 0.45 or split_data['website_word'] is None:
             print("if confition")
             flows = get_current_flows(current_position)
+            user_message = checkSpellings(user_message)
+            print("after modification",user_message)
             suggestion = getSimilar(flows,user_message)
             data = {
                 "action":"Unable to understand",
                 "action_name":suggestion
             }
+            print(suggestion)
             return data
         
         data = {

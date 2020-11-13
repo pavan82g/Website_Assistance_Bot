@@ -51,6 +51,7 @@ def similarity(X,Y):
 
 def checkSpellings(text):
     spell = SpellChecker() 
+    spell.word_frequency.load_text_file('./static/data/words.txt')
     new_text = ""
 
     for word in text.split():
