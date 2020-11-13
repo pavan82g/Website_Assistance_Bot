@@ -8,6 +8,7 @@ import json
 import re
 from werkzeug.utils import secure_filename
 import os
+import speech_recognition as sr
 
 from Utilites import get_text_data,similarity,checkSpellings
 
@@ -70,7 +71,7 @@ def load_action():
 
 
 def get_json():
-    file_name = "./static/data/flow.json"
+    file_name = r"./static/data/flow.json"
     f = open(file_name,) 
     data = json.load(f) 
     return data
@@ -92,17 +93,15 @@ def getSimilar(flows,word):
 @app.route('/getlanguage',methods=['GET'])
 def getLanguage():
     if request.method == "GET":
-        file_path = r"./static/data/language.txt"
-        languange_list = get_text_data(file_path)
-        data = {}
-        for i,language in enumerate(languange_list):
-            data[i] = language
+        file_path = r"./static/data/language.json"
+        f = open(file_path,) 
+        data = json.load(f) 
+        # print(type(data))
         return data
             
 
 @app.route('/bot_text',methods=['GET'])
 def bot_text():
-    
     if request.method=='GET':
         user_message = request.args.get('user_message')
         current_position = request.args.get('current_position')
@@ -161,7 +160,21 @@ def bot_voice():
 
         # Convert the voice to text 
         # language is not english convert to english
+        file_path = r"./static/data/language.json"
+        f = open(file_path,) 
+        language_data = json.load(f) 
 
+        r = sr.Recognizer()
+        try:
+            # using google speech recognition
+            text = r.recognize_google(user_message, language = language_data[language]['code'])
+            print('Converting audio transcripts into text ...')
+            print(text)
+            return text
+        
+        except:
+            print('Sorry.. run again...')
+            return "error"
 
         # bot_message = ""
         print(user_message)

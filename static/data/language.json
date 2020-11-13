@@ -1,0 +1,27 @@
+{
+    "1":{
+        "id":1,
+        "language":"English",
+        "code":"en-US"
+    },
+    "2":{
+        "id":2,
+        "language":"Vietnamese",
+        "code":"vi-VN"
+    },
+    "3":{
+        "id":3,
+        "language":"Spanish",
+        "code":"es-ES"
+    },
+    "4":{
+        "id":4,
+        "language":"German",
+        "code":"de-DE"
+    },
+    "5":{
+        "id":5,
+        "language":"French",
+        "code":"fr-FR"
+    }
+}
