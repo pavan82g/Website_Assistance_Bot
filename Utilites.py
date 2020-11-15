@@ -1,6 +1,13 @@
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
 from spellchecker import SpellChecker 
+from googletrans import Translator
+
+
+translator = Translator(service_urls=[
+      'translate.google.com',
+      'translate.google.co.kr',
+    ])
 
 def get_text_data(file_path):
     data = []
@@ -59,3 +66,8 @@ def checkSpellings(text):
         new_text += " "
 
     return new_text
+
+
+def changeLanguage(message,src,dest):
+    translation = translator.translate(message,src=src,dest=dest)
+    return translation.text

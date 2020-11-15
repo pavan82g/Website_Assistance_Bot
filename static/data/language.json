@@ -2,26 +2,31 @@
     "1":{
         "id":1,
         "language":"English",
-        "code":"en-US"
+        "code":"en-US",
+        "text_code":"en"
     },
     "2":{
         "id":2,
         "language":"Vietnamese",
-        "code":"vi-VN"
+        "code":"vi-VN",
+        "text_code":"vi"
     },
     "3":{
         "id":3,
         "language":"Spanish",
-        "code":"es-ES"
+        "code":"es-ES",
+        "text_code":"es"
     },
     "4":{
         "id":4,
         "language":"German",
-        "code":"de-DE"
+        "code":"de-DE",
+        "text_code":"de"
     },
     "5":{
         "id":5,
         "language":"French",
-        "code":"fr-FR"
+        "code":"fr-FR",
+        "text_code":"fr"
     }
 }

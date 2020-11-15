@@ -11,10 +11,14 @@ import os
 import speech_recognition as sr
 from googletrans import Translator
 
-from Utilites import get_text_data,similarity,checkSpellings
+from Utilites import get_text_data,similarity,checkSpellings,changeLanguage
 
 app=Flask(__name__)
 cors = CORS(app)
+translator = Translator(service_urls=[
+      'translate.google.com',
+      'translate.google.co.kr',
+    ])
 
 
 def get_current_flows(current_position):
@@ -109,8 +113,11 @@ def bot_text():
         language = request.args.get('language')
         # user_message = "hello there"
 
+        file_path = r"./static/data/language.json"
+        f = open(file_path,) 
+        language_data = json.load(f) 
+    
         # Convert any language to english and then process
-        translator = Translator()
         translation = translator.translate(user_message)
         user_message = translation.text
         print(user_message,language)
@@ -147,8 +154,10 @@ def bot_text():
             print("if confition")
             flows = get_current_flows(current_position)
             suggestion = getSimilar(flows,user_message)
+            text = "Unable to understand"
+            text = changeLanguage(text,"en",language_data[language]['text_code'])
             data = {
-                "action":"Unable to understand",
+                "action":text,
                 "action_name":suggestion
             }
             return data
@@ -250,9 +259,20 @@ def get_suggestion():
 @app.route('/get_faq',methods=['GET'])
 def get_faq():
     if request.method=='GET':
-        file_name = "./static/data/faq.json"
+        language = request.args.get('language')
+        print(language)
+        file_path = r"./static/data/language.json"
+        f = open(file_path,) 
+        language_data = json.load(f) 
+
+        file_name = r"./static/data/faq.json"
         f = open(file_name,) 
         data = json.load(f) 
+        # Convert into respective language
+        for faq in data:
+            faq["Question"] = changeLanguage(faq["Question"],"en",language_data[language]['text_code'])
+            faq["Answer"] = changeLanguage(faq["Answer"],"en",language_data[language]['text_code'])
+            print(faq["Question"])
         data = {
             "FAQ":data
         }
