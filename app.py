@@ -9,16 +9,17 @@ import re
 from werkzeug.utils import secure_filename
 import os
 import speech_recognition as sr
-from googletrans import Translator
+# from googletrans import Translator
+from translate import Translator
 
 from Utilites import get_text_data,similarity,checkSpellings,changeLanguage
 
 app=Flask(__name__)
 cors = CORS(app)
-translator = Translator(service_urls=[
-      'translate.google.com',
-      'translate.google.co.kr',
-    ])
+# translator = Translator(service_urls=[
+#       'translate.google.com',
+#       'translate.google.co.kr',
+#     ])
 
 
 def get_current_flows(current_position):
@@ -118,8 +119,10 @@ def bot_text():
         language_data = json.load(f) 
     
         # Convert any language to english and then process
-        translation = translator.translate(user_message)
-        user_message = translation.text
+        # translation = translator.translate(user_message)
+        # user_message = translation.text
+        user_message = changeLanguage(text,language_data[language]['text_code'],"en")
+
         print(user_message,language)
 
         split_data = split_action_text(user_message,current_position)
