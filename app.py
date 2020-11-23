@@ -121,7 +121,7 @@ def bot_text():
         # Convert any language to english and then process
         # translation = translator.translate(user_message)
         # user_message = translation.text
-        user_message = changeLanguage(text,language_data[language]['text_code'],"en")
+        user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
 
         print(user_message,language)
 
