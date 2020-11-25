@@ -121,7 +121,7 @@ def bot_text():
         # Convert any language to english and then process
         # translation = translator.translate(user_message)
         # user_message = translation.text
-        user_message = changeLanguage(text,language_data[language]['text_code'],"en")
+        user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
 
         print(user_message,language)
 
@@ -268,14 +268,16 @@ def get_faq():
         f = open(file_path,) 
         language_data = json.load(f) 
 
-        file_name = r"./static/data/faq.json"
+        file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
         f = open(file_name,) 
-        data = json.load(f) 
+        data = json.load(f)
         # Convert into respective language
-        for faq in data:
-            faq["Question"] = changeLanguage(faq["Question"],"en",language_data[language]['text_code'])
-            faq["Answer"] = changeLanguage(faq["Answer"],"en",language_data[language]['text_code'])
-            print(faq["Question"])
+        # TODO: Need to check for some solution
+        # for faq in data:
+        #     faq["Question"] = changeLanguage(faq["Question"],"en",language_data[language]['text_code'])
+        #     faq["Answer"] = changeLanguage(faq["Answer"],"en",language_data[language]['text_code'])
+        #     print(faq["Question"])
+        #     print(faq["Answer"])
         data = {
             "FAQ":data
         }

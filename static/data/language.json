@@ -28,5 +28,11 @@
         "language":"French",
         "code":"fr-FR",
         "text_code":"fr"
+    },
+    "6":{
+        "id":6,
+        "language":"Hindi",
+        "code":"fr-FR",
+        "text_code":"hi"
     }
 }
