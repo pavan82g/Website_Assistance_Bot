@@ -270,12 +270,15 @@ def get_faq():
 
         file_name = r"./static/data/faq.json"
         f = open(file_name,) 
-        data = json.load(f) 
+        data = json.load(f)
+        # Get the faq of given language
+        data =  data[language]
         # Convert into respective language
         for faq in data:
             faq["Question"] = changeLanguage(faq["Question"],"en",language_data[language]['text_code'])
             faq["Answer"] = changeLanguage(faq["Answer"],"en",language_data[language]['text_code'])
             print(faq["Question"])
+            print(faq["Answer"])
         data = {
             "FAQ":data
         }
