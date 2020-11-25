@@ -113,7 +113,7 @@ def bot_text(user_message,current_position,language):
     # Convert any language to english and then process
     # translation = translator.translate(user_message)
     # user_message = translation.text
-    user_message = changeLanguage(text,language_data[language]['text_code'],"en")
+    user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
     # print(user_message,language)
 
     split_data = split_action_text(user_message,current_position)
@@ -266,10 +266,16 @@ if __name__ == '__main__':
     common_actions = {"greet":[],"click":[]}
     load_action()
 
-    while True:
-        language = input("Enter the language id: ")
-        print(get_faq(language=language))
-    # print(getLanguage())
-    # print(get_faq(language="2"))
-    # bot_text()
-    # bot_voice()
+    # while True:
+    #     language = input("Enter the language id: ")
+    #     print(get_faq(language=language))
+    # while True:
+    #     user_message = input("Enter the user message: ")
+    #     current_position = input("Enter the current position: ")
+    #     language = input("Enter the language id: ")
+    #     print(bot_text(user_message,current_position,language))
+    # while True:
+    #     user_message = input("Enter the user message: ")
+    #     current_position = input("Enter the current position: ")
+    #     language = input("Enter the language id: ")
+    #     print(bot_voice(current_position,language))
