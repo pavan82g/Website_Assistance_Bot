@@ -283,6 +283,38 @@ def get_faq():
         }
         return data
 
+
+@app.route('/get_change_text',methods=['GET'])
+def getChangeText():
+    if request.method=='GET':
+        language = request.args.get('language')
+        print(language)
+
+        file_path = r"./static/data/language.json"
+        f = open(file_path,) 
+        language_data = json.load(f) 
+
+        file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
+        f = open(file_name,) 
+        faq_data = json.load(f)
+
+        file_path = r"./static/data/bot_text.json"
+        f = open(file_path,) 
+        bot_text_data = json.load(f) 
+        bot_text_data = bot_text_data[language_data[language]["language"]]
+
+        file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
+        f = open(file_name,) 
+        flow_data = json.load(f) 
+
+        data = {
+            "FAQ":faq_data,
+            "FLOWS":flow_data,
+            "OTHER":bot_text_data
+        }
+        return data
+
+
 @app.route('/upload',methods=['POST'])
 def upload():
     if request.method=='POST':

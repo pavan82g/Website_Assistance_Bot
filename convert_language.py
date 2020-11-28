@@ -25,9 +25,9 @@ for key,value in language_data.items():
         temp_faq_data.append(item)
         print(item)
 
-    with open(r"./static/data/FAQ/faq_1"+str(value["language"])+".json", 'w') as f:
-        # f.write(str(temp_faq_data))
-        json.dump(temp_faq_data, f) 
+    # with open(r"./static/data/FAQ/faq_1"+str(value["language"])+".json", 'w') as f:
+    #     # f.write(str(temp_faq_data))
+    #     json.dump(temp_faq_data, f) 
 
     # result = translator.translate(contents, dest=value['text_code']).text
     # print(result.text)
