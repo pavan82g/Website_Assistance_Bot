@@ -1,9 +1,21 @@
 {
     "INITAL" : {
-        "1":"FLOW START",
-        "2":"FLOW MANUAL AUTHENTICATION",
-        "3":"FLOW LOCATION QR CODE",
-        "4":"FLOW FACIAL RECOGNITION"
+        "1":{
+            "command":"FLOW START",
+            "Position":[]
+        },
+        "2":{
+            "command":"FLOW MANUAL AUTHENTICATION",
+            "Position":[]
+        },
+        "3":{
+            "command":"FLOW LOCATION QR CODE",
+            "Position":[]
+        },
+        "4":{
+            "command":"FLOW FACIAL RECOGNITION",
+            "Position":[]
+        }
     },
 
     "SAME" : {
@@ -15,148 +27,430 @@
 
     "TOTAL" : {
         "1":{
-            "1.1":"ICOUNT",
-            "1.2":"ICHECKPOINT SETUP" ,
-            "1.3":"FACE ENTRY",
-            "1.4":"QR LOCATION ENTRY",
-            "-1":"back",
-            "0":"home"
+            "1.1":{
+                "command":"ICOUNT",
+                "Position":[]
+            },
+            "1.2":{
+                "command":"ICHECKPOINT SETUP",
+                "Position":[]
+            },
+            "1.3":{
+                "command":"FACE ENTRY",
+                "Position":[]
+            },
+            "1.4":{
+                "command":"QR LOCATION ENTRY",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "2":{
-            "2.1":"EXIT MANUAL AUITHENTICATION",
-            "2.2":"FACE ENTRY" ,
-            "2.3":"QR LOCATION ENTRY",
-            "-1":"back",
-            "0":"home"
+            "2.1":{
+                "command":"EXIT MANUAL AUITHENTICATION",
+                "Position":[]
+            },
+            "2.2":{
+                "command":"FACE ENTRY",
+                "Position":[]
+            } ,
+            "2.3":{
+                "command":"QR LOCATION ENTRY",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "3":{
-            "3.1":"ALLOW AUTHENTICATION",
-            "-1":"back",
-            "0":"home"
+            "3.1":{
+                "command":"ALLOW AUTHENTICATION",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4":{
-            "4.1":"AUTHENTICATE ID",
-            "-1":"back",
-            "0":"home"
+            "4.1":{
+                "command":"AUTHENTICATE ID",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.1":{
-            "1.1.1":"SLIDE TO NEXT SIDE",
-            "-1":"back",
-            "0":"home"
+            "1.1.1":{
+                "command":"SLIDE TO NEXT SIDE",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2":{
-            "1.2.1":"SHARE DATA REQUESTS",
-            "1.2.2":"EMPLOYEE STATUS",
-            "1.2.3":"TEMPERATURE SETUP",
-            "1.2.4":"SEND DATA",
-            "1.2.5":"ENTRY STATUS",
-            "-1":"back",
-            "0":"home"
+            "1.2.1":{
+                "command":"SHARE DATA REQUESTS",
+                "Position":[]
+            },
+            "1.2.2":{
+                "command":"EMPLOYEE STATUS",
+                "Position":[]
+            },
+            "1.2.3":{
+                "command":"TEMPERATURE SETUP",
+                "Position":[]
+            },
+            "1.2.4":{
+                "command":"SEND DATA",
+                "Position":[]
+            },
+            "1.2.5":{
+                "command":"ENTRY STATUS",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "3.1":{
-            "3.1.1":"AUTHENTICATE ID",
-            "-1":"back",
-            "0":"home"
+            "3.1.1":{
+                "command":"AUTHENTICATE ID",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1":{
-            "4.1.1":"SCAN FACE ID",
-            "4.1.2":"FACE AUTHENTICATED",
-            "-1":"back",
-            "0":"home"
+            "4.1.1":{
+                "command":"SCAN FACE ID",
+                "Position":[]
+            },
+            "4.1.2":{
+                "command":"FACE AUTHENTICATED",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.1":{
-            "1.2.1.1":"ADD NEW",
-            "-1":"back",
-            "0":"home"
+            "1.2.1.1":{
+                "command":"ADD NEW",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.1.1":{
-            "1.2.1.1.1":"SAVE",
-            "1.2.1.1.2":"MANDATORY DATA",
-            "1.2.1.1.3":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "1.2.1.1.1":{
+                "command":"SAVE",
+                "Position":[]
+            },
+            "1.2.1.1.2":{
+                "command":"MANDATORY DATA",
+                "Position":[]
+            },
+            "1.2.1.1.3":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.1.1.2":{
-            "1.2.1.1.2.1":"SELECT REQUESTS",
-            "-1":"back",
-            "0":"home"
+            "1.2.1.1.2.1":{
+                "command":"SELECT REQUESTS",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.1.1.2.1":{
-            "1.2.1.1.2.1.1":"SAVE",
-            "1.2.1.1.2.1.2":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "1.2.1.1.2.1.1":{
+                "command":"SAVE",
+                "Position":[]
+            },
+            "1.2.1.1.2.1.2":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.2":{
-            "1.2.2.1":"ADD NEW",
-            "-1":"back",
-            "0":"home"
+            "1.2.2.1":{
+                "command":"ADD NEW",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.4":{
-            "1.2.4.1":"DELETE DATA",
-            "-1":"back",
-            "0":"home"
+            "1.2.4.1":{
+                "command":"DELETE DATA",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "1.2.5":{
-            "1.2.5.1":"ADD NEW",
-            "-1":"back",
-            "0":"home"
+            "1.2.5.1":{
+                "command":"ADD NEW",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "3.1.1":{
-            "3.1.1.1":"SCAN FACE ID",
-            "-1":"back",
-            "0":"home"
+            "3.1.1.1":{
+                "command":"SCAN FACE ID",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "3.1.1.1":{
-            "3.1.1.1.1":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "3.1.1.1.1":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "3.1.1.1.1":{
-            "3.1.1.1.1.1":"DATA SHARE RQUEST",
-            "-1":"back",
-            "0":"home"
+            "3.1.1.1.1.1":{
+                "command":"DATA SHARE RQUEST",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "3.1.1.1.1.1":{
-            "3.1.1.1.1.1.1":"YES I APPROVE",
-            "3.1.1.1.1.1.2":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "3.1.1.1.1.1.1":{
+                "command":"YES I APPROVE",
+                "Position":[]
+            },
+            "3.1.1.1.1.1.2":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1.1":{
-            "4.1.1.1":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "4.1.1.1":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1.1.1":{
-            "4.1.1.1.1":"DATA SHARE RQUEST",
-            "-1":"back",
-            "0":"home"
+            "4.1.1.1.1":{
+                "command":"DATA SHARE RQUEST",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1.1.1.1":{
-            "4.1.1.1.1.1":"YES I APPROVE",
-            "4.1.1.1.1.2":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "4.1.1.1.1.1":{
+                "command":"YES I APPROVE",
+                "Position":[]
+            },
+            "4.1.1.1.1.2":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1.2":{
-            "4.1.2.1":"TEMPERATURE READING",
-            "4.1.2.2":"ICHECK ID",
-            "-1":"back",
-            "0":"home"
+            "4.1.2.1":{
+                "command":"TEMPERATURE READING",
+                "Position":[]
+            },
+            "4.1.2.2":{
+                "command":"ICHECK ID",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1.2.2":{
-            "4.1.2.2.1":"AUTHENTICATE ID",
-            "4.1.2.2.2":"PASSPORT",
-            "4.1.2.2.3":"CONTACT DETAILS",
-            "-1":"back",
-            "0":"home"
+            "4.1.2.2.1":{
+                "command":"AUTHENTICATE ID",
+                "Position":[]
+            },
+            "4.1.2.2.2":{
+                "command":"PASSPORT",
+                "Position":[]
+            },
+            "4.1.2.2.3":{
+                "command":"CONTACT DETAILS",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         },
         "4.1.2.2.3":{
-            "4.1.2.2.3.1":"SAVE",
-            "4.1.2.2.3.2":"CANCEL",
-            "-1":"back",
-            "0":"home"
+            "4.1.2.2.3.1":{
+                "command":"SAVE",
+                "Position":[]
+            },
+            "4.1.2.2.3.2":{
+                "command":"CANCEL",
+                "Position":[]
+            },
+            "-1":{
+                "command":"BACK",
+                "Position":[]
+            },
+            "0":{
+                "command":"HOME",
+                "Position":[]
+            }
         }
     }
 }

@@ -1,9 +1,10 @@
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
 from spellchecker import SpellChecker 
-# from googletrans import Translator
 
 from translate import Translator
+
+# from googletrans import Translator
 # translator = Translator(service_urls=[
 #       'translate.google.com',
 #       'translate.google.co.kr',

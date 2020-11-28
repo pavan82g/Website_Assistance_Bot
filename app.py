@@ -40,9 +40,9 @@ def split_action_text(main_string,current_position):
         result['remaining'] = main_string
         return result
     for id,word in website_words.items():
-        position = main_string.lower().find(word.lower())
+        position = main_string.lower().find(word["command"].lower())
         if position != -1:
-            remaining_text = main_string[0:position] + main_string[position+len(word):]
+            remaining_text = main_string[0:position] + main_string[position+len(word["command"]):]
             result['website_word'] = str(id)
             result['remaining'] = remaining_text
             return result
@@ -86,7 +86,7 @@ def get_json():
 def getSimilar(flows,word):
     similar_words = []
     for k,v in flows.items():
-        score = similarity(v,word)
+        score = similarity(v["command"],word)
         # print(l,word,score)
         if score > 0.25:
             similar_words.append(k)
