@@ -1,6 +1,8 @@
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
 from spellchecker import SpellChecker 
+import time
+
 
 def get_text_data(file_path):
     data = []
@@ -60,20 +62,27 @@ def checkSpellings(text):
 
     return new_text
 
-# from googletrans import Translator
-# translator = Translator(service_urls=[
-#       'translate.google.com',
-#       'translate.google.co.kr',
-#     ])
-# def changeLanguage(message,src,dest):
-#     translation = translator.translate(message,src=src,dest=dest)
-#     return translation.text
-
-from translate import Translator
+from googletrans import Translator
+translator = Translator(service_urls=[
+      'translate.google.com',
+      'translate.google.co.kr',
+    ])
 def changeLanguage(message,src,dest):
-    # print("message",message)
-    # print("Source",src)
-    # print("Destionation",dest)
-    translator = Translator(to_lang=dest,from_lang=src)
-    translation = translator.translate(message)
-    return str(translation)
+    while True:
+        try:
+            translation = translator.translate(message,src=src,dest=dest)
+            return translation.text
+        except:
+            time.sleep(2)
+            print("Exception")
+            continue
+        
+
+# from translate import Translator
+# def changeLanguage(message,src,dest):
+#     # print("message",message)
+#     # print("Source",src)
+#     # print("Destionation",dest)
+#     translator = Translator(to_lang=dest,from_lang=src)
+#     translation = translator.translate(message)
+#     return str(translation)

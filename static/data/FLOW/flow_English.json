@@ -1,455 +1,918 @@
 {
-    "INITAL" : {
-        "1":{
-            "command":"FLOW START",
-            "Position":[]
+    "INITAL": {
+        "1": {
+            "command": "FLOW START",
+            "Position": {
+                "top": 0.25,
+                "left": 0,
+                "scale": 2,
+                "zoom": "300%"
+            }
         },
-        "2":{
-            "command":"FLOW MANUAL AUTHENTICATION",
-            "Position":[]
+        "2": {
+            "command": "FLOW MANUAL AUTHENTICATION",
+            "Position": {
+                "top": 0.02,
+                "left": 0,
+                "scale": 2,
+                "zoom": "0%"
+            }
         },
-        "3":{
-            "command":"FLOW LOCATION QR CODE",
-            "Position":[]
+        "3": {
+            "command": "FLOW LOCATION QR CODE",
+            "Position": {
+                "top": 0.17,
+                "left": 0,
+                "scale": 2,
+                "zoom": "0%"
+            }
         },
-        "4":{
-            "command":"FLOW FACIAL RECOGNITION",
-            "Position":[]
+        "4": {
+            "command": "FLOW FACIAL RECOGNITION",
+            "Position": {
+                "top": 0.3,
+                "left": 0,
+                "scale": 2,
+                "zoom": "0%"
+            }
         }
     },
-
-    "SAME" : {
-        "1.3":"4",
-        "1.4":"3",
-        "2.3":"3",
-        "2.2":"4"
+    "SAME": {
+        "1.3": "4",
+        "1.4": "3",
+        "2.3": "3",
+        "2.2": "4"
     },
-
-    "TOTAL" : {
-        "1":{
-            "1.1":{
-                "command":"ICOUNT",
-                "Position":[]
+    "TOTAL": {
+        "1": {
+            "1.1": {
+                "command": "ICOUNT",
+                "Position": {
+                    "top": 0.15,
+                    "left": 0.5,
+                    "scale": 1,
+                    "zoom": "400%"
+                }
             },
-            "1.2":{
-                "command":"ICHECKPOINT SETUP",
-                "Position":[]
+            "1.2": {
+                "command": "ICHECKPOINT SETUP",
+                "Position": {
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "300%"
+                }
             },
-            "1.3":{
-                "command":"FACE ENTRY",
-                "Position":[]
+            "1.3": {
+                "command": "FACE ENTRY",
+                "Position": {
+                    "top": 0.3,
+                    "left": 0,
+                    "scale": 2,
+                    "zoom": "0%"
+                }
             },
-            "1.4":{
-                "command":"QR LOCATION ENTRY",
-                "Position":[]
+            "1.4": {
+                "command": "QR LOCATION ENTRY",
+                "Position": {
+                    "top": 0.17,
+                    "left": 0,
+                    "scale": 2,
+                    "zoom": "0%"
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "2":{
-            "2.1":{
-                "command":"EXIT MANUAL AUITHENTICATION",
-                "Position":[]
+        "2": {
+            "2.1": {
+                "command": "EXIT MANUAL AUITHENTICATION",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "2.2":{
-                "command":"FACE ENTRY",
-                "Position":[]
-            } ,
-            "2.3":{
-                "command":"QR LOCATION ENTRY",
-                "Position":[]
+            "2.2": {
+                "command": "FACE ENTRY",
+                "Position": {
+                    "top": 0.3,
+                    "left": 0,
+                    "scale": 2,
+                    "zoom": "0%"
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "2.3": {
+                "command": "QR LOCATION ENTRY",
+                "Position": {
+                    "top": 0.17,
+                    "left": 0,
+                    "scale": 2,
+                    "zoom": "0%"
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "3":{
-            "3.1":{
-                "command":"ALLOW AUTHENTICATION",
-                "Position":[]
+        "3": {
+            "3.1": {
+                "command": "ALLOW AUTHENTICATION",
+                "Position": {
+                    "top": 0.5,
+                    "scale": 0,
+                    "zoom": "400%",
+                    "left": 0.3
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4":{
-            "4.1":{
-                "command":"AUTHENTICATE ID",
-                "Position":[]
+        "4": {
+            "4.1": {
+                "command": "AUTHENTICATE ID",
+                "Position": {
+                    "top": 0.5,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0.4
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.1":{
-            "1.1.1":{
-                "command":"SLIDE TO NEXT SIDE",
-                "Position":[]
+        "1.1": {
+            "1.1.1": {
+                "command": "SLIDE TO NEXT SIDE",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2":{
-            "1.2.1":{
-                "command":"SHARE DATA REQUESTS",
-                "Position":[]
+        "1.2": {
+            "1.2.1": {
+                "command": "SHARE DATA REQUESTS",
+                "Position": {
+                    "top": 0.03,
+                    "scale": 1,
+                    "zoom": "400%",
+                    "left": 0.3
+                }
             },
-            "1.2.2":{
-                "command":"EMPLOYEE STATUS",
-                "Position":[]
+            "1.2.2": {
+                "command": "EMPLOYEE STATUS",
+                "Position": {
+                    "top": 0.14,
+                    "scale": 1,
+                    "zoom": "400%",
+                    "left": 0.28
+                }
             },
-            "1.2.3":{
-                "command":"TEMPERATURE SETUP",
-                "Position":[]
+            "1.2.3": {
+                "command": "TEMPERATURE SETUP",
+                "Position": {
+                    "top": 0.15,
+                    "scale": 0,
+                    "zoom": "400%",
+                    "left": 0.22
+                }
             },
-            "1.2.4":{
-                "command":"SEND DATA",
-                "Position":[]
+            "1.2.4": {
+                "command": "SEND DATA",
+                "Position": {
+                    "top": 0.12,
+                    "scale": 1,
+                    "zoom": "400%",
+                    "left": 0.4
+                }
             },
-            "1.2.5":{
-                "command":"ENTRY STATUS",
-                "Position":[]
+            "1.2.5": {
+                "command": "ENTRY STATUS",
+                "Position": {
+                    "top": 0.04,
+                    "scale": 1,
+                    "zoom": "300%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "3.1":{
-            "3.1.1":{
-                "command":"AUTHENTICATE ID",
-                "Position":[]
+        "3.1": {
+            "3.1.1": {
+                "command": "AUTHENTICATE ID",
+                "Position": {
+                    "top": 0.5,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0.4
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1":{
-            "4.1.1":{
-                "command":"SCAN FACE ID",
-                "Position":[]
+        "4.1": {
+            "4.1.1": {
+                "command": "SCAN FACE ID",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "4.1.2":{
-                "command":"FACE AUTHENTICATED",
-                "Position":[]
+            "4.1.2": {
+                "command": "FACE AUTHENTICATED",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.1":{
-            "1.2.1.1":{
-                "command":"ADD NEW",
-                "Position":[]
+        "1.2.1": {
+            "1.2.1.1": {
+                "command": "ADD NEW",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.1.1":{
-            "1.2.1.1.1":{
-                "command":"SAVE",
-                "Position":[]
+        "1.2.1.1": {
+            "1.2.1.1.1": {
+                "command": "SAVE",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "1.2.1.1.2":{
-                "command":"MANDATORY DATA",
-                "Position":[]
+            "1.2.1.1.2": {
+                "command": "MANDATORY DATA",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "1.2.1.1.3":{
-                "command":"CANCEL",
-                "Position":[]
+            "1.2.1.1.3": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.1.1.2":{
-            "1.2.1.1.2.1":{
-                "command":"SELECT REQUESTS",
-                "Position":[]
+        "1.2.1.1.2": {
+            "1.2.1.1.2.1": {
+                "command": "SELECT REQUESTS",
+                "Position": {
+                    "top": 0.02,
+                    "scale": 1,
+                    "zoom": "400%",
+                    "left": 0.4
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.1.1.2.1":{
-            "1.2.1.1.2.1.1":{
-                "command":"SAVE",
-                "Position":[]
+        "1.2.1.1.2.1": {
+            "1.2.1.1.2.1.1": {
+                "command": "SAVE",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "1.2.1.1.2.1.2":{
-                "command":"CANCEL",
-                "Position":[]
+            "1.2.1.1.2.1.2": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.2":{
-            "1.2.2.1":{
-                "command":"ADD NEW",
-                "Position":[]
+        "1.2.2": {
+            "1.2.2.1": {
+                "command": "ADD NEW",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.4":{
-            "1.2.4.1":{
-                "command":"DELETE DATA",
-                "Position":[]
+        "1.2.4": {
+            "1.2.4.1": {
+                "command": "DELETE DATA",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "1.2.5":{
-            "1.2.5.1":{
-                "command":"ADD NEW",
-                "Position":[]
+        "1.2.5": {
+            "1.2.5.1": {
+                "command": "ADD NEW",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "3.1.1":{
-            "3.1.1.1":{
-                "command":"SCAN FACE ID",
-                "Position":[]
+        "3.1.1": {
+            "3.1.1.1": {
+                "command": "SCAN FACE ID",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "3.1.1.1":{
-            "3.1.1.1.1":{
-                "command":"CANCEL",
-                "Position":[]
+        "3.1.1.1": {
+            "3.1.1.1.1": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "3.1.1.1.1":{
-            "3.1.1.1.1.1":{
-                "command":"DATA SHARE RQUEST",
-                "Position":[]
+        "3.1.1.1.1": {
+            "3.1.1.1.1.1": {
+                "command": "DATA SHARE RQUEST",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "3.1.1.1.1.1":{
-            "3.1.1.1.1.1.1":{
-                "command":"YES I APPROVE",
-                "Position":[]
+        "3.1.1.1.1.1": {
+            "3.1.1.1.1.1.1": {
+                "command": "YES I APPROVE",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "3.1.1.1.1.1.2":{
-                "command":"CANCEL",
-                "Position":[]
+            "3.1.1.1.1.1.2": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1.1":{
-            "4.1.1.1":{
-                "command":"CANCEL",
-                "Position":[]
+        "4.1.1": {
+            "4.1.1.1": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1.1.1":{
-            "4.1.1.1.1":{
-                "command":"DATA SHARE RQUEST",
-                "Position":[]
+        "4.1.1.1": {
+            "4.1.1.1.1": {
+                "command": "DATA SHARE RQUEST",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1.1.1.1":{
-            "4.1.1.1.1.1":{
-                "command":"YES I APPROVE",
-                "Position":[]
+        "4.1.1.1.1": {
+            "4.1.1.1.1.1": {
+                "command": "YES I APPROVE",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "4.1.1.1.1.2":{
-                "command":"CANCEL",
-                "Position":[]
+            "4.1.1.1.1.2": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1.2":{
-            "4.1.2.1":{
-                "command":"TEMPERATURE READING",
-                "Position":[]
+        "4.1.2": {
+            "4.1.2.1": {
+                "command": "TEMPERATURE READING",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "4.1.2.2":{
-                "command":"ICHECK ID",
-                "Position":[]
+            "4.1.2.2": {
+                "command": "ICHECK ID",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1.2.2":{
-            "4.1.2.2.1":{
-                "command":"AUTHENTICATE ID",
-                "Position":[]
+        "4.1.2.2": {
+            "4.1.2.2.1": {
+                "command": "AUTHENTICATE ID",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "4.1.2.2.2":{
-                "command":"PASSPORT",
-                "Position":[]
+            "4.1.2.2.2": {
+                "command": "PASSPORT",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "4.1.2.2.3":{
-                "command":"CONTACT DETAILS",
-                "Position":[]
+            "4.1.2.2.3": {
+                "command": "CONTACT DETAILS",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         },
-        "4.1.2.2.3":{
-            "4.1.2.2.3.1":{
-                "command":"SAVE",
-                "Position":[]
+        "4.1.2.2.3": {
+            "4.1.2.2.3.1": {
+                "command": "SAVE",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "4.1.2.2.3.2":{
-                "command":"CANCEL",
-                "Position":[]
+            "4.1.2.2.3.2": {
+                "command": "CANCEL",
+                "Position": {
+                    "top": 0,
+                    "scale": 0,
+                    "zoom": "0%",
+                    "left": 0
+                }
             },
-            "-1":{
-                "command":"BACK",
-                "Position":[]
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
             },
-            "0":{
-                "command":"HOME",
-                "Position":[]
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
             }
         }
     }

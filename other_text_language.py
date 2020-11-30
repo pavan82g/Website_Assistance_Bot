@@ -1,11 +1,12 @@
 import goslate
 import json
+from Utilites import changeLanguage
 
-gs = goslate.Goslate()
 
 file_path = r"./static/data/language.json"
 f = open(file_path,) 
 language_data = json.load(f) 
+f.close()
 
 file_path = r"./static/data/bot_text.json"
 f = open(file_path,) 
@@ -22,26 +23,20 @@ for key,value in language_data.items():
         temp_bot_text_data[value['language']] = english_data
     else:
         if value['language'] not in list(bot_text_data.keys()):
-            text = list(bot_text_data['English'].values())
-            translate_text = gs.translate(text, value['text_code'])
             item = {}
-            for i,val in enumerate(translate_text):
-                item[str(i+1)] = val.encode('utf8')
+            for i,text in enumerate(list(bot_text_data['English'].values())):
+                translate_text = changeLanguage(text, "en", value['text_code'])
+                item[str(i+1)] = translate_text
             temp_bot_text_data[value['language']] = item
 
         elif english_length > len(bot_text_data[value['language']]):
             text = []
             for i in range(len(bot_text_data[value['language']])+1,english_length+1):
-                text.append(english_data[i])
-            translate_text = gs.translate(text, value['text_code'])
-            item = bot_text_data[value['language']]
-            for i,val in enumerate(translate_text):
-                item[str(len(bot_text_data[value['language']]) + i)] = val.encode('utf8')
-            temp_bot_text_data[value['language']] = item
-
+                translate_text = changeLanguage(english_data[i], "en", value['text_code'])
+                temp_bot_text_data[value['language']][str(len(bot_text_data[value['language']]) + i)] = translate_text
         else:
             temp_bot_text_data[value['language']] = bot_text_data[value['language']]
 
-with open(r"./static/data/bot_text.json", 'w') as f:
-    # f.write(str(temp_faq_data))
-    json.dump(temp_bot_text_data, f) 
+with open(r"./static/data/bot_text.json", 'w', encoding="utf8") as f:
+    # f.write(temp_bot_text_data)
+    json.dump(temp_bot_text_data, f, ensure_ascii=False)

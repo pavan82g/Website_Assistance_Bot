@@ -156,6 +156,11 @@ def bot_text():
         if action[1] < 0.45 or split_data['website_word'] is None:
             print("if confition")
             flows = get_current_flows(current_position)
+            if flows is None:
+                data = {
+                    "action":"No Option",
+                    "action_name":None
+                }
             suggestion = getSimilar(flows,user_message)
             text = "Unable to understand"
             text = changeLanguage(text,"en",language_data[language]['text_code'])

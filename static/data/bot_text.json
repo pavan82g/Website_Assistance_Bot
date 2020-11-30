@@ -1,9 +1,44 @@
 {
-    "English":{
-       "1":"Hello, Welcome to our terminal",
-       "2":"where do you want me to take?",
-       "3":"unable to understand string. The recommended suggestions for the text input are:",
-       "4":"do you need any other strings?",
-       "5":"Have a great day !!"
-    }
- }
+   "English":{
+      "1":"Hello, Welcome to our terminal",
+      "2":"where do you want me to take?",
+      "3":"unable to understand string. The recommended suggestions for the text input are:",
+      "4":"do you need any other strings?",
+      "5":"Have a great day !!"
+   },
+   "Vietnamese":{
+      "1":"Xin chào, chào mừng đến với thiết bị đầu cuối của chúng tôi",
+      "2":"Bạn muốn tôi lấy ở đâu?",
+      "3":"Không thể hiểu chuỗi. Các đề xuất được đề xuất cho đầu vào văn bản là:",
+      "4":"Bạn có cần bất kỳ chuỗi nào khác?",
+      "5":"Có một ngày tuyệt vời !!"
+   },
+   "Spanish":{
+      "1":"Hola, bienvenido a nuestra terminal.",
+      "2":"¿Dónde quieres que tome?",
+      "3":"incapaz de entender la cadena. Las sugerencias recomendadas para la entrada de texto son:",
+      "4":"¿Necesitas alguna otra cadena?",
+      "5":"Que tengas un gran día !!"
+   },
+   "German":{
+      "1":"Hallo, willkommen in unserem Terminal",
+      "2":"Wo soll ich nehmen?",
+      "3":"Zeichenfolge kann nicht verstehen. Die empfohlenen Vorschläge für den Texteingang sind:",
+      "4":"Benötigen Sie andere Saiten?",
+      "5":"Ich wünsche ihnen einen wunderbaren Tag !!"
+   },
+   "French":{
+      "1":"Bonjour, Bienvenue sur notre terminal",
+      "2":"Où voulez-vous que je prenne?",
+      "3":"Impossible de comprendre la chaîne. Les suggestions recommandées pour l'entrée de texte sont les suivantes:",
+      "4":"Avez-vous besoin d'autres cordes?",
+      "5":"Passez une bonne journée !!"
+   },
+   "Hindi":{
+      "1":"हैलो, हमारे टर्मिनल में आपका स्वागत है",
+      "2":"आप मुझे कहाँ लेना चाहते हैं?",
+      "3":"स्ट्रिंग को समझने में असमर्थ। पाठ इनपुट के लिए अनुशंसित सुझाव हैं:",
+      "4":"क्या आपको किसी अन्य तार की आवश्यकता है?",
+      "5":"आपका दिन अच्छा रहे !!"
+   }
+}
