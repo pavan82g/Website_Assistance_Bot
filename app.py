@@ -308,7 +308,8 @@ def getChangeText():
         bot_text_data = json.load(f) 
         bot_text_data = bot_text_data[language_data[language]["language"]]
 
-        file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
+        # file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
+        file_name = r"./static/data/FLOW/flow_English.json"
         f = open(file_name,) 
         flow_data = json.load(f) 
 
