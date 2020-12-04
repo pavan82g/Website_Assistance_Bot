@@ -62,6 +62,7 @@ def checkSpellings(text):
 
     return new_text
 
+
 from googletrans import Translator
 translator = Translator(service_urls=[
       'translate.google.com',

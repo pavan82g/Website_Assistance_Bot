@@ -10,7 +10,7 @@ from werkzeug.utils import secure_filename
 import os
 import speech_recognition as sr
 # from googletrans import Translator
-from translate import Translator
+# from translate import Translator
 
 from Utilites import get_text_data,similarity,checkSpellings,changeLanguage
 
@@ -121,7 +121,8 @@ def bot_text():
         # Convert any language to english and then process
         # translation = translator.translate(user_message)
         # user_message = translation.text
-        user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
+        if language != "1":
+            user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
 
         print(user_message,language)
 
