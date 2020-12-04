@@ -33,7 +33,6 @@ def get_current_flows(current_position):
 def split_action_text(main_string,current_position):
     result = {"website_word":"","remaining":""}
     position = None
-    # TODO: logic for if there are more than one website word in the main string
     website_words = get_current_flows(current_position)
     if website_words is None:
         result['website_word'] = None
@@ -49,6 +48,33 @@ def split_action_text(main_string,current_position):
     result['website_word'] = None
     result['remaining'] = main_string
     return result
+
+from difflib import SequenceMatcher
+def secondCheck(main_string,current_position):
+    result = {"website_word":"","remaining":""}
+    position = None
+    website_words = get_current_flows(current_position)
+    if website_words is None:
+        result['website_word'] = None
+        result['remaining'] = main_string
+        return result
+    score = 0
+    website_word_id = None
+    for id,word in website_words.items():
+        # print(main_string,word["command"])
+        current_score = SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio()
+        # print(current_score)
+        if current_score > 0.5 and current_score > score:
+            score = current_score
+            website_word_id = str(id)
+    if score != 0 and website_word_id is not None:
+        result['website_word'] = website_word_id
+        result['remaining'] = ""
+        return result
+    else:
+        result['website_word'] = None
+        result['remaining'] = main_string
+        return result
 
 
 def getAction(message):
@@ -124,10 +150,10 @@ def bot_text():
         if language != "1":
             user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
 
-        print(user_message,language)
+        # print(user_message,language)
 
         split_data = split_action_text(user_message,current_position)
-        print("split data",split_data)
+        # print("split data",split_data)
         
         # Removing empty space in the text
         # split_data['remaining'] = re.sub(r'[^\w]', '', split_data['remaining'])
@@ -143,10 +169,9 @@ def bot_text():
                 return data
         else:
             action = getAction(split_data['remaining'])
-            print(action)
 
-        print(action)
-        print(split_data['website_word'])
+        # print(action)
+        # print(split_data['website_word'])
         if action[1] > 0.45 and action[0] == 'greet':
             data = {
                 "action":str(action[0]),
@@ -155,16 +180,25 @@ def bot_text():
             return data
 
         if action[1] < 0.45 or split_data['website_word'] is None:
-            print("if confition")
+            # print("if confition")
             flows = get_current_flows(current_position)
             if flows is None:
                 data = {
                     "action":"No Option",
                     "action_name":None
                 }
+                return data
+            result = secondCheck(user_message,current_position)
+            # print(result)
+            if result["website_word"] is not None:
+                data = {
+                    "action":'click',
+                    "action_name":result["website_word"]
+                }
+                return data
             suggestion = getSimilar(flows,user_message)
             text = "Unable to understand"
-            text = changeLanguage(text,"en",language_data[language]['text_code'])
+            # text = changeLanguage(text,"en",language_data[language]['text_code'])
             data = {
                 "action":text,
                 "action_name":suggestion

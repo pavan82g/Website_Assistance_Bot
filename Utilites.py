@@ -87,3 +87,16 @@ def changeLanguage(message,src,dest):
 #     translator = Translator(to_lang=dest,from_lang=src)
 #     translation = translator.translate(message)
 #     return str(translation)
+
+
+# from textblob import TextBlob
+# def changeLanguage(message,src,dest):
+#     while True:
+#         try:
+#             text_blob = TextBlob(message)
+#             translation = text_blob.translate(to=dest)
+#             return translation
+#         except:
+#             time.sleep(2)
+#             print("Exception")
+#             continue
