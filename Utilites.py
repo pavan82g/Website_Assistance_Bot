@@ -15,7 +15,7 @@ def get_text_data(file_path):
 # def similarity(str1,str2):
 #     return SequenceMatcher(None, str1, str2).ratio() 
 def similarity(X,Y):
-    # Program to measure the similarity between  
+    # To measure the similarity between  
     # two sentences using cosine similarity. 
     
     X = X.lower()
@@ -51,6 +51,8 @@ def similarity(X,Y):
     # print("similarity: ", cosine) 
     return cosine
 
+
+# Function for checking spelling mistake in the given text 
 def checkSpellings(text):
     spell = SpellChecker() 
     spell.word_frequency.load_text_file('./static/data/words.txt')
@@ -63,6 +65,8 @@ def checkSpellings(text):
     return new_text
 
 
+
+# Functions for language translations
 from googletrans import Translator
 translator = Translator(service_urls=[
       'translate.google.com',

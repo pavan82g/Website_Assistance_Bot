@@ -9,19 +9,13 @@ import re
 from werkzeug.utils import secure_filename
 import os
 import speech_recognition as sr
-# from googletrans import Translator
-# from translate import Translator
 
 from Utilites import get_text_data,similarity,checkSpellings,changeLanguage
 
 app=Flask(__name__)
 cors = CORS(app)
-# translator = Translator(service_urls=[
-#       'translate.google.com',
-#       'translate.google.co.kr',
-#     ])
 
-
+# To get the flows at current position
 def get_current_flows(current_position):
     if current_position == "0" or current_position == "":
         return inital_flows
@@ -30,6 +24,8 @@ def get_current_flows(current_position):
             return remaining_flows[current_position]
     return None
 
+
+# To split the normal english and website words
 def split_action_text(main_string,current_position):
     result = {"website_word":"","remaining":""}
     position = None
@@ -49,6 +45,8 @@ def split_action_text(main_string,current_position):
     result['remaining'] = main_string
     return result
 
+
+# In case of spelling mistake in website words take the nearest word which match within flows
 from difflib import SequenceMatcher
 def secondCheck(main_string,current_position):
     result = {"website_word":"","remaining":""}
@@ -77,6 +75,7 @@ def secondCheck(main_string,current_position):
         return result
 
 
+# Get the meaning of english text whether it is click function or greet function
 def getAction(message):
     accuracy = {}
     for k,v in common_actions.items():
@@ -95,6 +94,7 @@ def getAction(message):
     return action
 
 
+# Loading data from the files
 def load_action():
     greet_path = r"./static/data/greet.txt"
     common_actions['greet'] = get_text_data(greet_path)
@@ -109,6 +109,7 @@ def get_json():
     return data
 
 
+# To check the similarity
 def getSimilar(flows,word):
     similar_words = []
     for k,v in flows.items():
@@ -122,6 +123,7 @@ def getSimilar(flows,word):
     return similar_words
 
 
+# API for listing languages
 @app.route('/getlanguage',methods=['GET'])
 def getLanguage():
     if request.method == "GET":
@@ -132,6 +134,7 @@ def getLanguage():
         return data
             
 
+# The main API for bot using text as input
 @app.route('/bot_text',methods=['GET'])
 def bot_text():
     if request.method=='GET':
@@ -145,8 +148,6 @@ def bot_text():
         language_data = json.load(f) 
     
         # Convert any language to english and then process
-        # translation = translator.translate(user_message)
-        # user_message = translation.text
         if language != "1":
             user_message = changeLanguage(user_message,language_data[language]['text_code'],"en")
 
@@ -158,6 +159,7 @@ def bot_text():
         # Removing empty space in the text
         # split_data['remaining'] = re.sub(r'[^\w]', '', split_data['remaining'])
         
+        # If only the website word is given as text to bot
         if split_data['remaining'].replace(' ','') == "":
             action = ('click',0.7)
             # If got some website word but no action word
@@ -168,20 +170,23 @@ def bot_text():
                 }
                 return data
         else:
+            # To get the action of remeaining text other than webiste word
             action = getAction(split_data['remaining'])
 
         # print(action)
         # print(split_data['website_word'])
+        # Checking the accuracy of command for greetings
         if action[1] > 0.45 and action[0] == 'greet':
             data = {
                 "action":str(action[0]),
                 "action_name":str(action[0])
             }
             return data
-
+        # If the accuracy is less for action and there is website word
         if action[1] < 0.45 or split_data['website_word'] is None:
             # print("if condition")
             flows = get_current_flows(current_position)
+            # If there is no further action 
             if flows is None:
                 data = {
                     "action":"No Option",
@@ -213,6 +218,7 @@ def bot_text():
         return data
 
 
+# API same as bot_text but the input will be voice insted of text
 @app.route('/bot_voice',methods=['GET','POST'])
 def bot_voice():
     if request.method=='POST':
@@ -292,6 +298,7 @@ def bot_voice():
         return data
 
         
+# API for giving suggestions 
 @app.route('/suggestion',methods=['GET'])
 def get_suggestion():
     if request.method=='GET':
@@ -302,6 +309,8 @@ def get_suggestion():
         }
         return data
 
+
+# API for the listing FAQ
 @app.route('/get_faq',methods=['GET'])
 def get_faq():
     if request.method=='GET':
@@ -327,6 +336,7 @@ def get_faq():
         return data
 
 
+# API for giving all the data to front-end at a time based on the language 
 @app.route('/get_change_text',methods=['GET'])
 def getChangeText():
     if request.method=='GET':
@@ -359,6 +369,7 @@ def getChangeText():
         return data
 
 
+# API for the file uploads
 @app.route('/upload',methods=['POST'])
 def upload():
     if request.method=='POST':
