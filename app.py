@@ -180,7 +180,7 @@ def bot_text():
             return data
 
         if action[1] < 0.45 or split_data['website_word'] is None:
-            # print("if confition")
+            # print("if condition")
             flows = get_current_flows(current_position)
             if flows is None:
                 data = {
@@ -220,27 +220,30 @@ def bot_voice():
         current_position = request.form['current_position']
         language = request.form['language']
 
+        # with open('./static/voice/audio.wav', 'wb') as audio:
+        #     user_message.save(audio)
         # Saving the voice file 
-        user_message.save('./static/voice/audio.wav')
+        # user_message.save(r'./static/voice/audio1.mp4')
         # Convert the voice to text 
         # language is not english convert to english
         file_path = r"./static/data/language.json"
         f = open(file_path,) 
         language_data = json.load(f) 
 
-        print("voice data",user_message)
+        print("voice data type",user_message)
+        print("voice data",type(user_message.read()))
         r = sr.Recognizer()
         try:
             # using google speech recognition
-            with sr.AudioFile(r'./static/voice/audio.wav') as source:
-                audio_text = r.listen(source)
-    
-            user_message = r.recognize_google(audio_text, language = language_data[language]['code'])
+            # with sr.AudioFile('./static/voice/myaudio.webm') as source:
+            #     audio_text = r.listen(source)
+            user_message = r.recognize_google(r.listen(user_message), language = language_data[language]['code'])
             print('Converting audio transcripts into text ...')
             print(user_message)
             # return text
         
-        except:
+        except Exception as mesg:
+            print(mesg)
             print('Sorry.. run again...')
             return "error"
 
@@ -335,16 +338,16 @@ def getChangeText():
         language_data = json.load(f) 
 
         file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
-        f = open(file_name,) 
+        f = open(file_name, encoding="utf8") 
         faq_data = json.load(f)
 
         file_path = r"./static/data/bot_text.json"
-        f = open(file_path,) 
+        f = open(file_path, encoding="utf8") 
         bot_text_data = json.load(f) 
         bot_text_data = bot_text_data[language_data[language]["language"]]
 
         # file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
-        file_name = r"./static/data/FLOW/flow_English.json"
+        file_name = r"./static/data/flow.json"
         f = open(file_name,) 
         flow_data = json.load(f) 
 
@@ -363,7 +366,7 @@ def upload():
         if file:
             filename = secure_filename(file.filename)
             file.save(os.path.join("./static/database/", filename))
-            print(os.path.join("./static/database/", filename))
+            file_path = os.path.join("./static/database/", filename)
             return "Document has been sucessfully uploaded"
         else:
             return "No file recivied"

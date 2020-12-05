@@ -23,3 +23,14 @@
 #     f.write(str(temp))
 
 
+import speech_recognition as sr
+r = sr.Recognizer()
+
+hellow=sr.AudioFile(r"static\voice\myaudio.webm")
+with hellow as source:
+    audio = r.record(source)
+try:
+    s = r.recognize_google(audio)
+    print("Text: "+s)
+except Exception as e:
+    print("Exception: "+str(e))

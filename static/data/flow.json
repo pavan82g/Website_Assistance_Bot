@@ -5,9 +5,10 @@
             "Position": {
                 "top": 0.25,
                 "left": 0,
-                "scale": 2,
+                "scale": 1,
                 "zoom": "300%"
-            }
+            },
+            "help":"https://www.nlpbots.com/"
         },
         "2": {
             "command": "FLOW MANUAL AUTHENTICATION",
@@ -16,7 +17,8 @@
                 "left": 0,
                 "scale": 2,
                 "zoom": "0%"
-            }
+            },
+            "help":"https://www.nlpbots.com/"
         },
         "3": {
             "command": "FLOW LOCATION QR CODE",
@@ -25,7 +27,8 @@
                 "left": 0,
                 "scale": 2,
                 "zoom": "0%"
-            }
+            },
+            "help":"https://www.nlpbots.com/"
         },
         "4": {
             "command": "FLOW FACIAL RECOGNITION",
@@ -34,7 +37,8 @@
                 "left": 0,
                 "scale": 2,
                 "zoom": "0%"
-            }
+            },
+            "help":"https://www.nlpbots.com/"
         }
     },
     "SAME": {
@@ -52,7 +56,8 @@
                     "left": 0.5,
                     "scale": 1,
                     "zoom": "400%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2": {
                 "command": "ICHECKPOINT SETUP",
@@ -61,7 +66,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "300%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.3": {
                 "command": "FACE ENTRY",
@@ -70,7 +76,8 @@
                     "left": 0,
                     "scale": 2,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.4": {
                 "command": "QR LOCATION ENTRY",
@@ -79,14 +86,16 @@
                     "left": 0,
                     "scale": 2,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -96,7 +105,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "2": {
@@ -107,7 +117,8 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "2.2": {
                 "command": "FACE ENTRY",
@@ -116,7 +127,8 @@
                     "left": 0,
                     "scale": 2,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "2.3": {
                 "command": "QR LOCATION ENTRY",
@@ -125,14 +137,16 @@
                     "left": 0,
                     "scale": 2,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -142,7 +156,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "3": {
@@ -153,14 +168,16 @@
                     "scale": 0,
                     "zoom": "400%",
                     "left": 0.3
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -170,7 +187,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "4": {
@@ -181,14 +199,16 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0.4
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -198,7 +218,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "1.1": {
@@ -209,14 +230,16 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -226,7 +249,29 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
+            }
+        },
+        "1.1.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                },
+                "help":"https://www.nlpbots.com/"
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "1.2": {
@@ -237,7 +282,8 @@
                     "scale": 1,
                     "zoom": "400%",
                     "left": 0.3
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2.2": {
                 "command": "EMPLOYEE STATUS",
@@ -246,7 +292,8 @@
                     "scale": 1,
                     "zoom": "400%",
                     "left": 0.28
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2.3": {
                 "command": "TEMPERATURE SETUP",
@@ -255,7 +302,8 @@
                     "scale": 0,
                     "zoom": "400%",
                     "left": 0.22
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2.4": {
                 "command": "SEND DATA",
@@ -264,7 +312,8 @@
                     "scale": 1,
                     "zoom": "400%",
                     "left": 0.4
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2.5": {
                 "command": "ENTRY STATUS",
@@ -273,14 +322,16 @@
                     "scale": 1,
                     "zoom": "300%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -290,7 +341,50 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
+            }
+        },
+        "1.3": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                },
+                "help":"https://www.nlpbots.com/"
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                },
+                "help":"https://www.nlpbots.com/"
+            }
+        },
+        "1.4": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                },
+                "help":"https://www.nlpbots.com/"
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "3.1": {
@@ -301,14 +395,16 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0.4
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -318,7 +414,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "4.1": {
@@ -329,7 +426,8 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "4.1.2": {
                 "command": "FACE AUTHENTICATED",
@@ -338,14 +436,16 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -355,7 +455,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "1.2.1": {
@@ -366,14 +467,16 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -383,7 +486,8 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             }
         },
         "1.2.1.1": {
@@ -394,7 +498,8 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2.1.1.2": {
                 "command": "MANDATORY DATA",
@@ -403,7 +508,8 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "1.2.1.1.3": {
                 "command": "CANCEL",
@@ -412,14 +518,37 @@
                     "scale": 0,
                     "zoom": "0%",
                     "left": 0
-                }
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "-1": {
                 "command": "BACK",
                 "Position": {
                     "isBack": true,
                     "back_position": null
-                }
+                },
+                "help":"https://www.nlpbots.com/"
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                },
+                "help":"https://www.nlpbots.com/"
+            }
+        },
+        "1.2.1.1.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                },
+                "help":"https://www.nlpbots.com/"
             },
             "0": {
                 "command": "HOME",
@@ -442,6 +571,25 @@
                     "left": 0.4
                 }
             },
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "1.2.1.1.3": {
             "-1": {
                 "command": "BACK",
                 "Position": {
@@ -497,6 +645,44 @@
                 }
             }
         },
+        "1.2.1.1.2.1.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "1.2.1.1.2.1.2": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
         "1.2.2": {
             "1.2.2.1": {
                 "command": "ADD NEW",
@@ -507,6 +693,44 @@
                     "left": 0
                 }
             },
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "1.2.2.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "1.2.3": {
             "-1": {
                 "command": "BACK",
                 "Position": {
@@ -553,6 +777,25 @@
                 }
             }
         },
+        "1.2.4.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
         "1.2.5": {
             "1.2.5.1": {
                 "command": "ADD NEW",
@@ -563,6 +806,82 @@
                     "left": 0
                 }
             },
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "1.2.5.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "2.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "2.2": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "2.3": {
             "-1": {
                 "command": "BACK",
                 "Position": {
@@ -702,6 +1021,44 @@
                 }
             }
         },
+        "3.1.1.1.1.1.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "3.1.1.1.1.1.2": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
         "4.1.1": {
             "4.1.1.1": {
                 "command": "CANCEL",
@@ -795,6 +1152,44 @@
                 }
             }
         },
+        "4.1.1.1.1.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "4.1.1.1.1.2": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
         "4.1.2": {
             "4.1.2.1": {
                 "command": "TEMPERATURE READING",
@@ -814,6 +1209,25 @@
                     "left": 0
                 }
             },
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "4.1.2.1": {
             "-1": {
                 "command": "BACK",
                 "Position": {
@@ -878,6 +1292,44 @@
                 }
             }
         },
+        "4.1.2.2.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "4.1.2.2.2": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
         "4.1.2.2.3": {
             "4.1.2.2.3.1": {
                 "command": "SAVE",
@@ -912,6 +1364,44 @@
                     "left": 0,
                     "scale": 1,
                     "zoom": "0%"
+                }
+            }
+        },
+        "4.1.2.2.3.1": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                }
+            },
+            "0": {
+                "command": "HOME",
+                "Position": {
+                    "isHome": true,
+                    "top": 0,
+                    "left": 0,
+                    "scale": 1,
+                    "zoom": "0%"
+                }
+            }
+        },
+        "4.1.2.2.3.2": {
+            "-1": {
+                "command": "BACK",
+                "Position": {
+                    "isBack": true,
+                    "back_position": null
+                },
+                "0": {
+                    "command": "HOME",
+                    "Position": {
+                        "isHome": true,
+                        "top": 0,
+                        "left": 0,
+                        "scale": 1,
+                        "zoom": "0%"
+                    }
                 }
             }
         }
