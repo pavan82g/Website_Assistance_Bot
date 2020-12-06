@@ -57,6 +57,30 @@ def changeBotText():
     print("Bot text has been translated")
 
 
+def changeFlows():
+    file_name = r"./static/data/flow.json"
+    f = open(file_name,) 
+    data = json.load(f) 
+
+    for key,value in language_data.items():
+        temp_data = data.copy()
+        if value['language'] == "English":
+            continue
+        else:
+            for k,v in data["INITAL"].items():
+                temp_data["INITAL"][k]["command"] = changeLanguage(v["command"],"en",value['text_code'])
+
+            for k1,v1 in data["TOTAL"].items():
+                for k2,v2 in data["TOTAL"][k1].items():
+                    # print(v2["command"])
+                    # print(changeLanguage(v2["command"],"en",value['text_code']))
+                    temp_data["TOTAL"][k1][k2]["command"] = changeLanguage(v2["command"],"en",value['text_code'])
+
+            with open(r"./static/data/FAQ/flow_"+str(value["language"])+".json", 'w', encoding="utf8") as f:
+                json.dump(temp_data, f, ensure_ascii=False) 
+    print("Bot flows has been translated")
+
+
 if __name__ == "__main__":
     file_path = r"./static/data/language.json"
     language_data = {}
@@ -65,6 +89,7 @@ if __name__ == "__main__":
 
     changeFAQ()
     changeBotText()
+    changeFlows()
 
 
 

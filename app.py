@@ -1,6 +1,7 @@
 from spellchecker import SpellChecker 
 from nltk.corpus import stopwords 
 from nltk.tokenize import word_tokenize 
+from nltk.stem import PorterStemmer
 from difflib import SequenceMatcher 
 from flask import Flask, request
 from flask_cors import CORS, cross_origin
@@ -14,6 +15,8 @@ from Utilites import get_text_data,similarity,checkSpellings,changeLanguage
 
 app=Flask(__name__)
 cors = CORS(app)
+
+ps =PorterStemmer()
 
 # To get the flows at current position
 def get_current_flows(current_position):
@@ -58,11 +61,12 @@ def secondCheck(main_string,current_position):
         return result
     score = 0
     website_word_id = None
+    main_string = ps.stem(main_string)
     for id,word in website_words.items():
-        # print(main_string,word["command"])
+        print(main_string,word["command"])
         current_score = SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio()
-        # print(current_score)
-        if current_score > 0.5 and current_score > score:
+        print(current_score)
+        if current_score >= 0.5 and current_score > score:
             score = current_score
             website_word_id = str(id)
     if score != 0 and website_word_id is not None:
@@ -194,7 +198,7 @@ def bot_text():
                 }
                 return data
             result = secondCheck(user_message,current_position)
-            # print(result)
+            print(result)
             if result["website_word"] is not None:
                 data = {
                     "action":'click',
@@ -257,37 +261,60 @@ def bot_voice():
         print(user_message)
 
         split_data = split_action_text(user_message,current_position)
-        print("split data",split_data)
+        # print("split data",split_data)
         
         # Removing empty space in the text
         # split_data['remaining'] = re.sub(r'[^\w]', '', split_data['remaining'])
         
+        # If only the website word is given as text to bot
         if split_data['remaining'].replace(' ','') == "":
             action = ('click',0.7)
+            # If got some website word but no action word
+            if split_data['website_word'] is not None:
+                data = {
+                    "action":str(action[0]),
+                    "action_name":str(split_data['website_word'])
+                }
+                return data
         else:
+            # To get the action of remeaining text other than webiste word
             action = getAction(split_data['remaining'])
-            print(action)
 
-        print(action)
-        print(split_data['website_word'])
+        # print(action)
+        # print(split_data['website_word'])
+        # Checking the accuracy of command for greetings
         if action[1] > 0.45 and action[0] == 'greet':
             data = {
                 "action":str(action[0]),
                 "action_name":str(action[0])
             }
             return data
-
+        # If the accuracy is less for action and there is website word
         if action[1] < 0.45 or split_data['website_word'] is None:
-            print("if confition")
+            # print("if condition")
             flows = get_current_flows(current_position)
-            user_message = checkSpellings(user_message)
-            print("after modification",user_message)
+            # If there is no further action 
+            if flows is None:
+                data = {
+                    "action":"No Option",
+                    "action_name":None
+                }
+                return data
+            result = secondCheck(user_message,current_position)
+            # print(result)
+            if result["website_word"] is not None:
+                data = {
+                    "action":'click',
+                    "action_name":result["website_word"]
+                }
+                return data
             suggestion = getSimilar(flows,user_message)
+            text = "Unable to understand"
+            # text = changeLanguage(text,"en",language_data[language]['text_code'])
             data = {
-                "action":"Unable to understand",
+                "action":text,
                 "action_name":suggestion
             }
-            print(suggestion)
             return data
         
         data = {
@@ -323,13 +350,6 @@ def get_faq():
         file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
         f = open(file_name,) 
         data = json.load(f)
-        # Convert into respective language
-        # TODO: Need to check for some solution
-        # for faq in data:
-        #     faq["Question"] = changeLanguage(faq["Question"],"en",language_data[language]['text_code'])
-        #     faq["Answer"] = changeLanguage(faq["Answer"],"en",language_data[language]['text_code'])
-        #     print(faq["Question"])
-        #     print(faq["Answer"])
         data = {
             "FAQ":data
         }
@@ -356,8 +376,8 @@ def getChangeText():
         bot_text_data = json.load(f) 
         bot_text_data = bot_text_data[language_data[language]["language"]]
 
-        # file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
-        file_name = r"./static/data/flow.json"
+        file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
+        # file_name = r"./static/data/flow.json"
         f = open(file_name,) 
         flow_data = json.load(f) 
 

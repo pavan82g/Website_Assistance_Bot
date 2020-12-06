@@ -166,7 +166,6 @@ def bot_text(user_message,current_position,language):
 
 def bot_voice(current_position,language):
     # Saving the voice file 
-    user_message = ""
     user_message.save('./static/voice/audio.wav')
     # Convert the voice to text 
     # language is not english convert to english
