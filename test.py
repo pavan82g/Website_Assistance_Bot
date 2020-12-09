@@ -1,27 +1,70 @@
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize 
-from nltk.stem import PorterStemmer
+import json
 
-set(stopwords.words('english'))
+from polyglot.text import Text
 
-text = """take me to icounting"""
-
-# stop_words = set(stopwords.words('english')) 
-  
-# word_tokens = word_tokenize(text) 
+def changeLanguage(blob,dest):
+# blob = """flow start hello"""
+    try:
+        text = Text(blob+" hello")
+        # print(text)
+        words = text.transliterate("hi")
+        # print(words)
+        translate_text = ""
+        for x in words[:-1]:
+            translate_text += " "+x
+        print(translate_text)
+        return translate_text
+    except:
+        print(blob)
+        return blob
     
-# filtered_sentence = [] 
-  
-# for w in word_tokens: 
-#     if w not in stop_words: 
-#         filtered_sentence.append(w) 
 
-# Stem_words = []
-# ps =PorterStemmer()
-# for w in filtered_sentence:
-#     rootWord=ps.stem(w)
-#     Stem_words.append(rootWord)
-# # print(filtered_sentence)
-# print(Stem_words)
-ps =PorterStemmer()
-print(ps.stem(text))
+file_name = r"./static/data/flow.json"
+f = open(file_name,) 
+data = json.load(f)     
+
+temp_data = data.copy()
+
+for k,v in data["INITAL"].items():
+    temp_data["INITAL"][k]["command"] = changeLanguage(blob=v["command"],dest="hi")
+
+for k1,v1 in data["TOTAL"].items():
+    for k2,v2 in data["TOTAL"][k1].items():
+        temp_data["TOTAL"][k1][k2]["command"] = changeLanguage(blob=v2["command"],dest="hi")
+
+with open(r"./static/data/FLOW/flow_Hindi.json", 'w', encoding="utf8") as f:
+    json.dump(temp_data, f, ensure_ascii=False)     
+
+
+# def changeFlows():
+#     file_name = r"./static/data/flow.json"
+#     f = open(file_name,) 
+#     data = json.load(f) 
+
+#     for key,value in language_data.items():
+#         temp_data = data.copy()
+#         if value['language'] == "English":
+#             continue
+#         else:
+#             print(value['language'])
+#             for k,v in data["INITAL"].items():
+#                 temp_data["INITAL"][k]["command"] = changeLanguage(blob=v["command"],dest=value['text_code'])
+
+#             for k1,v1 in data["TOTAL"].items():
+#                 for k2,v2 in data["TOTAL"][k1].items():
+#                     # print(v2["command"])
+#                     # print(changeLanguage(v2["command"],"en",value['text_code']))
+#                     temp_data["TOTAL"][k1][k2]["command"] = changeLanguage(blob=v2["command"],dest=value['text_code'])
+
+#             with open(r"./static/data/FLOW/flow_"+str(value["language"])+".json", 'w', encoding="utf8") as f:
+#                 json.dump(temp_data, f, ensure_ascii=False) 
+#     print("Bot flows has been translated")
+
+
+# if __name__ == "__main__":
+#     file_path = r"./static/data/language.json"
+#     language_data = {}
+#     with open(file_path,) as f: 
+#         language_data = json.load(f) 
+
+#     changeFlows()

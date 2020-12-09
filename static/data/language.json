@@ -2,37 +2,31 @@
     "1":{
         "id":1,
         "language":"English",
-        "code":"en-US",
+        "voice_code":"en-US",
         "text_code":"en"
     },
     "2":{
         "id":2,
-        "language":"Vietnamese",
-        "code":"vi-VN",
-        "text_code":"vi"
+        "language":"Chinese",
+        "voice_code":"zh (cmn-Hans-CN)",
+        "text_code":"zh"
     },
     "3":{
         "id":3,
-        "language":"Spanish",
-        "code":"es-ES",
-        "text_code":"es"
+        "language":"Japanese",
+        "voice_code":"ja-JP",
+        "text_code":"ja"
     },
     "4":{
         "id":4,
-        "language":"German",
-        "code":"de-DE",
-        "text_code":"de"
+        "language":"Korean",
+        "voice_code":"ko-DE",
+        "text_code":"ko"
     },
     "5":{
         "id":5,
-        "language":"French",
-        "code":"fr-FR",
-        "text_code":"fr"
-    },
-    "6":{
-        "id":6,
         "language":"Hindi",
-        "code":"hi-HI",
+        "voice_code":"hi-HI",
         "text_code":"hi"
     }
 }

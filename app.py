@@ -247,7 +247,7 @@ def bot_voice():
             # using google speech recognition
             # with sr.AudioFile('./static/voice/myaudio.webm') as source:
             #     audio_text = r.listen(source)
-            user_message = r.recognize_google(r.listen(user_message), language = language_data[language]['code'])
+            user_message = r.recognize_google(r.listen(user_message), language = language_data[language]['voice_code'])
             print('Converting audio transcripts into text ...')
             print(user_message)
             # return text
@@ -367,7 +367,8 @@ def getChangeText():
         f = open(file_path,) 
         language_data = json.load(f) 
 
-        file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
+        # file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
+        file_name = r"./static/data/faq.json"
         f = open(file_name, encoding="utf8") 
         faq_data = json.load(f)
 
