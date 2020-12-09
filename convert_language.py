@@ -87,9 +87,9 @@ if __name__ == "__main__":
     with open(file_path,) as f: 
         language_data = json.load(f) 
 
-    changeFAQ()
+    # changeFAQ()
     changeBotText()
-    changeFlows()
+    # changeFlows()
 
 
 

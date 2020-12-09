@@ -1,44 +1,47 @@
 {
    "English":{
-      "1":"Hello, Welcome to our terminal",
-      "2":"where do you want me to take?",
-      "3":"unable to understand string. The recommended suggestions for the text input are:",
-      "4":"do you need any other strings?",
-      "5":"Have a great day !!"
+      "1": "Hello, Welcome to our terminal",
+      "2": "where do you want me to take?",
+      "3": "Unable to understand string. The recommended suggestions for the text input are:",
+      "4": "Do you need any other strings?",
+      "5": "Have a great day !!",
+      "6": "Support Bot",
+      "7": "Type your message"
    },
-   "Vietnamese":{
-      "1":"Xin chào, chào mừng đến với thiết bị đầu cuối của chúng tôi",
-      "2":"Bạn muốn tôi lấy ở đâu?",
-      "3":"Không thể hiểu chuỗi. Các đề xuất được đề xuất cho đầu vào văn bản là:",
-      "4":"Bạn có cần bất kỳ chuỗi nào khác?",
-      "5":"Có một ngày tuyệt vời !!"
+   "Chinese":{
+      "1":"您好，欢迎来到我们的航站楼",
+      "2":"你要我去哪里？",
+      "3":"无法理解字符串。文本输入的建议建议为：",
+      "4":"您还需要其他字符串吗？",
+      "5":"祝你有美好的一天 ！！”",
+      "6":"支持机器人",
+      "7":"输入您的讯息"
    },
-   "Spanish":{
-      "1":"Hola, bienvenido a nuestra terminal.",
-      "2":"¿Dónde quieres que tome?",
-      "3":"incapaz de entender la cadena. Las sugerencias recomendadas para la entrada de texto son:",
-      "4":"¿Necesitas alguna otra cadena?",
-      "5":"Que tengas un gran día !!"
+   "Japanese":{
+      "1":"こんにちは、私たちのターミナルへようこそ",
+      "2":"どこに連れて行って欲しいの？",
+      "3":"文字列を理解できません。テキスト入力の推奨される提案は次のとおりです。",
+      "4":"他に弦が必要ですか？",
+      "5":"すてきな一日を ！！",
+      "6":"サポートボット",
+      "7":"メッセージを入力してください"
    },
-   "German":{
-      "1":"Hallo, willkommen in unserem Terminal",
-      "2":"Wo soll ich nehmen?",
-      "3":"Zeichenfolge kann nicht verstehen. Die empfohlenen Vorschläge für den Texteingang sind:",
-      "4":"Benötigen Sie andere Saiten?",
-      "5":"Ich wünsche ihnen einen wunderbaren Tag !!"
-   },
-   "French":{
-      "1":"Bonjour, Bienvenue sur notre terminal",
-      "2":"Où voulez-vous que je prenne?",
-      "3":"Impossible de comprendre la chaîne. Les suggestions recommandées pour l'entrée de texte sont les suivantes:",
-      "4":"Avez-vous besoin d'autres cordes?",
-      "5":"Passez une bonne journée !!"
+   "Korean":{
+      "1":"안녕하세요, 저희 터미널에 오신 것을 환영합니다",
+      "2":"내가 어디로 가져가 길 바라나요?",
+      "3":"문자열을 이해할 수 없습니다. 텍스트 입력에 대한 권장 제안은 다음과 같습니다.",
+      "4":"다른 문자열이 필요합니까?",
+      "5":"좋은 하루 되세요 !!",
+      "6":"지원 봇",
+      "7":"메시지 입력"
    },
    "Hindi":{
       "1":"हैलो, हमारे टर्मिनल में आपका स्वागत है",
       "2":"आप मुझे कहाँ लेना चाहते हैं?",
       "3":"स्ट्रिंग को समझने में असमर्थ। पाठ इनपुट के लिए अनुशंसित सुझाव हैं:",
       "4":"क्या आपको किसी अन्य तार की आवश्यकता है?",
-      "5":"आपका दिन अच्छा रहे !!"
+      "5":"आपका दिन अच्छा रहे !!",
+      "6":"सपोर्ट बॉट",
+      "7":"अपना संदेश टाइप करें"
    }
 }
