@@ -206,6 +206,12 @@ def bot_text():
                 }
                 return data
             suggestion = getSimilar(flows,user_message)
+            if len(suggestion) == 1:
+                data = {
+                    "action":'click',
+                    "action_name":suggestion[0]
+                }
+                return data
             text = "Unable to understand"
             # text = changeLanguage(text,"en",language_data[language]['text_code'])
             data = {
