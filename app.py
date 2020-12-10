@@ -49,11 +49,25 @@ def split_action_text(main_string,current_position):
     return result
 
 
+# To check the similarity
+def getSimilar(flows,word):
+    similar_words = []
+    for k,v in flows.items():
+        score = similarity(v["command"],word)
+        # print(l,word,score)
+        if score > 0.25:
+            similar_words.append(k)
+
+    if len(similar_words) < 1:
+        similar_words = list(flows.keys())
+    return similar_words
+
+
 # In case of spelling mistake in website words take the nearest word which match within flows
 from difflib import SequenceMatcher
 def secondCheck(main_string,current_position):
+    print("secondCheck")
     result = {"website_word":"","remaining":""}
-    position = None
     website_words = get_current_flows(current_position)
     if website_words is None:
         result['website_word'] = None
@@ -61,12 +75,17 @@ def secondCheck(main_string,current_position):
         return result
     score = 0
     website_word_id = None
-    main_string = ps.stem(main_string)
+    print(main_string)
+    main_string = ps.stem(main_string+" ")
     for id,word in website_words.items():
+        current_score = 0
         print(main_string,word["command"])
-        current_score = SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio()
+        # print(similarity(word["command"],main_string),SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio())
+        current_score += similarity(word["command"],main_string)
+        current_score += SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio()
+        current_score = current_score/2
         print(current_score)
-        if current_score >= 0.5 and current_score > score:
+        if current_score > score and current_score > 0.10:
             score = current_score
             website_word_id = str(id)
     if score != 0 and website_word_id is not None:
@@ -111,20 +130,6 @@ def get_json():
     f = open(file_name,) 
     data = json.load(f) 
     return data
-
-
-# To check the similarity
-def getSimilar(flows,word):
-    similar_words = []
-    for k,v in flows.items():
-        score = similarity(v["command"],word)
-        # print(l,word,score)
-        if score > 0.25:
-            similar_words.append(k)
-
-    if len(similar_words) < 1:
-        similar_words = list(flows.keys())
-    return similar_words
 
 
 # API for listing languages
@@ -190,6 +195,7 @@ def bot_text():
         if action[1] < 0.45 or split_data['website_word'] is None:
             # print("if condition")
             flows = get_current_flows(current_position)
+            # print(flows,current_position)
             # If there is no further action 
             if flows is None:
                 data = {

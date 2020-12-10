@@ -36,9 +36,25 @@
 #     json.dump(temp_data, f, ensure_ascii=False)     
 
 from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize 
 
-main_string = "FACIALing"
+stop_words = set(stopwords.words('english'))
+
+text = "I wanna register application using face "
+
+word_tokens = word_tokenize(text)
+
+print(word_tokens)
+
+filtered_sentence = "" 
+  
+for w in word_tokens: 
+    if w not in stop_words: 
+        filtered_sentence += w+" "
+
+
 ps =PorterStemmer()
-main_string = ps.stem(main_string)
+text = ps.stem(filtered_sentence)
 
-print(main_string)
+print(text)
