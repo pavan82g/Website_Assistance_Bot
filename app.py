@@ -367,8 +367,8 @@ def getChangeText():
         f = open(file_path,) 
         language_data = json.load(f) 
 
-        # file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
-        file_name = r"./static/data/faq.json"
+        file_name = r"./static/data/FAQ/faq_"+ str(language_data[language]["language"]) +".json"
+        # file_name = r"./static/data/faq.json"
         f = open(file_name, encoding="utf8") 
         faq_data = json.load(f)
 
