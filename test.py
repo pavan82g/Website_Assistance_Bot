@@ -35,26 +35,27 @@
 # with open(r"./static/data/FLOW/flow_Hindi.json", 'w', encoding="utf8") as f:
 #     json.dump(temp_data, f, ensure_ascii=False)     
 
-from nltk.stem import PorterStemmer
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize 
+# from nltk.stem import PorterStemmer
+# from nltk.corpus import stopwords
+# from nltk.tokenize import word_tokenize 
 
-stop_words = set(stopwords.words('english'))
+# stop_words = set(stopwords.words('english'))
 
-text = "I wanna register application using face "
+# text = "I wanna register application using face "
 
-word_tokens = word_tokenize(text)
+# word_tokens = word_tokenize(text)
 
-print(word_tokens)
+# print(word_tokens)
 
-filtered_sentence = "" 
+# filtered_sentence = "" 
   
-for w in word_tokens: 
-    if w not in stop_words: 
-        filtered_sentence += w+" "
+# for w in word_tokens: 
+#     if w not in stop_words: 
+#         filtered_sentence += w+" "
 
 
-ps =PorterStemmer()
-text = ps.stem(filtered_sentence)
+# ps =PorterStemmer()
+# text = ps.stem(filtered_sentence)
 
-print(text)
+# print(text)
+

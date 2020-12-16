@@ -83,9 +83,13 @@ def secondCheck(main_string,current_position):
         # print(similarity(word["command"],main_string),SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio())
         current_score += similarity(word["command"],main_string)
         current_score += SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio()
+        # print("sim",similarity(word["command"],main_string))
+        # print("seq",SequenceMatcher(None, main_string.lower(), word["command"].lower()).ratio())
         current_score = current_score/2
         print(current_score)
-        if current_score > score and current_score > 0.10:
+        if current_score > score and current_score > 0.15:
+            if (id == -1 or id == 0) and current_score < 0.30:
+                pass
             score = current_score
             website_word_id = str(id)
     if score != 0 and website_word_id is not None:
