@@ -395,7 +395,7 @@ def getChangeText():
 
         file_name = r"./static/data/FLOW/flow_"+ str(language_data[language]["language"]) +".json"
         # file_name = r"./static/data/flow.json"
-        f = open(file_name,) 
+        f = open(file_name, encoding="utf8") 
         flow_data = json.load(f) 
 
         data = {
