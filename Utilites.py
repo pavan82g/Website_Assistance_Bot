@@ -3,21 +3,18 @@ from nltk.tokenize import word_tokenize
 from spellchecker import SpellChecker 
 import time
 
-
+# function to read text file and give list as output 
+# where each item in list is line in text file
 def get_text_data(file_path):
     data = []
     file_data = open(file_path).read()
-    for i, line in enumerate(file_data.split("\n")):
+    for line in file_data.split("\n"):
         data.append(line)
     return data 
 
-
-# def similarity(str1,str2):
-#     return SequenceMatcher(None, str1, str2).ratio() 
+# To measure the similarity between  
+# two sentences using cosine similarity.
 def similarity(X,Y):
-    # To measure the similarity between  
-    # two sentences using cosine similarity. 
-    
     X = X.lower()
     Y = Y.lower()
     # tokenization 

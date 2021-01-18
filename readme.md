@@ -118,7 +118,11 @@ API and there arrguments
 
 * api: /upload  arrguments:form data "document"
 
+Whenever a file has been uploaded the file gets saved in '/static/database/filename'
+
 * api: /getlanguage  arrguments:None
 
 * api: /get_change_text  arrguments:language(id)
 
+
+'app.py' and 'website_assistence.py' both are same but 'app.py' is used as API's and 'website_assistence.py' is used as normal python file which can be run in a terminal to see the output.
